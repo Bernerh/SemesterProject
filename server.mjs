@@ -9,9 +9,13 @@ server.set('port', port);
 
 // Defining a folder that will contain static files.
 server.use(express.static('public'));
+server.use(express.json());
+server.use(express.urlencoded({extended:true}))
 
 // Telling the server to use the USER_API 
-server.use("/user", USER_API);
+
+//changed user to users
+server.use("/users", USER_API);
 
 // A get request handler example)
 server.get("/", (req, res, next) => {

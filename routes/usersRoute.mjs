@@ -8,19 +8,22 @@ const USER_API = express.Router();
 const users = [];
 
 USER_API.get('/:id', (req, res) => {
+    /// TODO: Return user object
 
-    // Tip: All the information you need to get the id part of the request can be found in the documentation 
-    // https://expressjs.com/en/guide/routing.html (Route parameters)
 
-    /// TODO: 
-    // Return user object
+    const user = users[req.params.id];
+    if (user) {
+        console.log(user);  //send/json same shit
+        res.json(user);
+    } else {
+        res.status(HttpCodes.ClientSideErrorRespons.NotFound).send('User not found');
+    }
+
 })
 
-USER_API.post('/', (req, res, next) => {
+USER_API.post('/', (req, res) => {
+    // TODO: CreateUser
 
-    // This is using javascript object destructuring.
-    // Recomend reading up https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#syntax
-    // https://www.freecodecamp.org/news/javascript-object-destructuring-spread-operator-rest-parameter/
     const { name, email, password } = req.body;
 
     if (name != "" && email != "" && password != "") {
@@ -32,11 +35,12 @@ USER_API.post('/', (req, res, next) => {
         user.pswHash = password;
 
         ///TODO: Does the user exist?
+
         let exists = false;
 
         if (!exists) {
             users.push(user);
-            res.status(HttpCodes.SuccesfullRespons.Ok).end();
+            res.status(HttpCodes.SuccesfullRespons.Ok).send(user);
         } else {
             res.status(HttpCodes.ClientSideErrorRespons.BadRequest).end();
         }
@@ -44,15 +48,46 @@ USER_API.post('/', (req, res, next) => {
     } else {
         res.status(HttpCodes.ClientSideErrorRespons.BadRequest).send("Mangler data felt").end();
     }
+ 
 
 });
 
 USER_API.put('/:id', (req, res) => {
-    /// TODO: Edit user
+    // TODO: Edit/Update user
+    // ADDED
+
+    //const { id } = req.params;
+    const { name, email, password } = req.body;
+    //const userIndex = users.findIndex(user => user.id === parseInt(id));
+
+    const userIndex = req.params.id;
+
+    if (userIndex >= users.length) {
+        return res.status(HttpCodes.ClientSideErrorRespons.NotFound).send('User not found');
+    }
+
+    const user = users[userIndex];
+    user.name = name || user.name;
+    user.email = email || user.email;
+    user.pswHash = password || user.pswHash;
+    users[userIndex] = user;
+
+    res.json(user);
 })
 
 USER_API.delete('/:id', (req, res) => {
-    /// TODO: Delete user.
+    // TODO: Delete User
+    // ADDED
+    //const { id } = req.params;
+    //const userIndex = users.findIndex(user => user.id === parseInt(id));
+    const userIndex = req.params.id;
+
+    if (userIndex >= users.length) {
+        return res.status(HttpCodes.ClientSideErrorRespons.NotFound).send('User not found');
+    }
+
+    users.splice(userIndex, 1);
+    res.send(`User with ID ${userIndex} deleted`);
 })
 
 export default USER_API
