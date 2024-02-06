@@ -1,7 +1,3 @@
-
-// The point of this class is increasing readability and maintainability of the rest of the code. 
-// It should be extended and refactord as needed.
-
 class HttpCodes {
 
     static SuccesfullRespons = {
@@ -12,12 +8,19 @@ class HttpCodes {
         BadRequest: 400,
         Unauthorized: 401,
         PaymentRequired: 402,
-        Forbidden: 403, //changed from 402 lol
+        Forbidden: 403, //changed from 402
         NotFound: 404,
         MethodNotAllowed: 405,
         NotAcceptable: 406
     }
 
 }
+const HTTPMethods = {
+    POST: "POST",
+    GET: "GET",
+    PUT: "PUT",
+    PATCH: "PATCH",
+    DELETE: "DELETE"
+}
 
-export default HttpCodes;
+export { HttpCodes, HTTPMethods };

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Test Page</title>
+</head>
+<body>
+  <h1>User Test Page</h1>
+
+  <h2>Create User</h2>
+  <form id="createUserForm">
+    Name: <input type="text" name="name"><br>
+    Email: <input type="text" name="email"><br>
+    Password: <input type="text" name="password"><br>
+    <input type="submit" value="Create User">
+  </form>
+
+  <h2>Edit User</h2>
+  <form id="editUserForm">
+    ID: <input type="number" name="id" required><br>
+    Name: <input type="text" name="name"><br>
+    Email: <input type="text" name="email"><br>
+    Password: <input type="text" name="password"><br>
+    <input type="submit" value="Edit User">
+  </form>
+
+  <h2>Delete User</h2>
+  <form id="deleteUserForm">
+    ID: <input type="number" name="id" required><br>
+    <input type="submit" value="Delete User">
+  </form>
+
+  <h2>Get User</h2>
+  <form id="getUserForm">
+    ID: <input type="number" name="id" required><br>
+    <input type="submit" value="Get User">
+  </form>
+
+  <script>
+   // Create User Event Listener
+   document.getElementById("createUserForm").addEventListener("submit", function(event) {
+        event.preventDefault(); 
+        const formData = new FormData(this);
+        const data = {
+            name: formData.get("name"),
+            email: formData.get("email"),
+            password: formData.get("password")
+        };
+
+        fetch("/users", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Network response was not ok " + response.statusText);
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log("User created:", data);
+        })
+        .catch(error => {
+            console.error("There has been a problem with your fetch operation:", error);
+        });
+    });
+
+    // Edit User Event Listener
+    document.getElementById("editUserForm").addEventListener("submit", async function(event) {
+        event.preventDefault();
+        const formData = new FormData(this);
+        const userId = formData.get("id");
+        const data = {
+            name: formData.get("name"),
+            email: formData.get("email"),
+            password: formData.get("password")
+        };
+
+        try {
+            const response = await fetch(`/users/${encodeURIComponent(userId)}`, {
+                method: "PUT",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(data)
+            });
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            const result = await response.json();
+            console.log("User updated:", result);
+        } catch (error) {
+            console.error("Error updating user:", error);
+        }
+    });
+
+     // Delete User Event Listener
+    document.getElementById("deleteUserForm").addEventListener("submit", async function(event) {
+        event.preventDefault();
+        const userId = new FormData(this).get("id");
+
+        try {
+            const response = await fetch(`/users/${encodeURIComponent(userId)}`, {
+                method: "DELETE"
+            });
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            console.log("User deleted:", userId);
+        } catch (error) {
+            console.error("Error deleting user:", error);
+        }
+    });
+
+    document.getElementById("getUserForm").addEventListener("submit", async function(event) {
+        event.preventDefault();
+        const userId = new FormData(this).get("id");
+
+        try {
+            const response = await fetch(`/users/${encodeURIComponent(userId)}`, {
+                method: "GET"
+            });
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            const user = await response.json();
+            console.log(user);
+        } catch (error) {
+            console.error("Error getting user:", error);
+        }
+    });
+  </script>
+</body>
+</html>
