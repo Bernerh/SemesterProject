@@ -1,5 +1,5 @@
 # Semester project
-
+My Language Learning App
 ## Description
 This is our template for the semester project. It contains a basic structure for the project and a few examples of how to use the different parts of the project. You must expand upon the project, refactor when nessasary and make it your own.
 
