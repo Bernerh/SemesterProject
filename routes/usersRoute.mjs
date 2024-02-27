@@ -4,6 +4,8 @@ import { HttpCodes, HTTPMethods } from "../modules/httpConstants.mjs";
 import SuperLogger from "../modules/SuperLogger.mjs";
 import Chalk from "chalk";
 import { passwordStrengthColor } from "../modules/SuperLogger.mjs";
+import bcrypt from 'bcrypt';
+//import DBManager from "../modules/storageManager.mjs";
 
 const USER_API = express.Router();
 const users = [];
@@ -41,21 +43,61 @@ const checkPasswordStrength = (req, res, next) => {
     next();
 };
 
-USER_API.post("/", checkPasswordStrength, (req, res) => {
+
+USER_API.post("/login", async (req, res) => {
+    
+    const { email, password } = req.body;
+    const user = users.find(u => u.email === email);
+    if (user) {
+        try {
+            console.log("The password I wrote was: " + password);
+            console.log("Users password is: " + user.pswHash);
+
+            const match = await bcrypt.compare(password, user.pswHash);
+          
+            /*DELETE 3 LOGS*/
+            SuperLogger.log(`Attempting login for user: ${user.email}`); //NEW
+            SuperLogger.log(`Hashed password for ${user.email}: ${user.pswHash}`,);//NEW
+            SuperLogger.log(`Password match for ${user.email}: ${match}`);//NEW
+            
+            if (match) {
+                const userId = users.indexOf(user);
+                res.status(HttpCodes.SuccesfullRespons.Ok).json({ success: true, id: userId, name: user.name, email: user.email });
+                // Session or token?
+            } else {
+                res.status(HttpCodes.ClientSideErrorRespons.Unauthorized).json({ success: false, message: "Invalid email or password" });
+            }
+        } catch (error) {
+            res.status(HttpCodes.ClientSideErrorRespons.InternalServerError).json({ success: false, message: "An error occurred during login." });
+        }
+    } else {
+        res.status(HttpCodes.ClientSideErrorRespons.NotFound).json({ success: false, message: "User not found" });
+    }
+});
+
+
+USER_API.post("/", checkPasswordStrength, async (req, res) => {
     const { name, email, password } = req.body;
     if (name && email && password) {
-        const user = new User();
-        user.name = name;
-        user.email = email;
-        user.pswHash = passwordStrengthColor(password);
+        try {
+            const hashedPassword = await bcrypt.hash(password, 10);
+            const user = new User();
+            user.name = name;
+            user.email = email;
+            user.pswHash = hashedPassword; // Save hashed password
 
-        let exists = users.some(u => u.name.toLowerCase() === name.toLowerCase());
-        if (!exists) {
-            users.push(user);
-            SuperLogger.log(`Created user: ${name}`, SuperLogger.LOGGING_LEVELS.IMPORTANT);
-            res.status(HttpCodes.SuccesfullRespons.Ok).send(user);
-        } else {
-            res.status(HttpCodes.ClientSideErrorRespons.BadRequest).send("User already exists");
+            let exists = users.some(u => u.email.toLowerCase() === email.toLowerCase());
+            if (!exists) {
+                users.push(user);
+                SuperLogger.log(`Created user: ${name}`, SuperLogger.LOGGING_LEVELS.IMPORTANT);
+
+                res.status(HttpCodes.SuccesfullRespons.Ok).send({ name: user.name, email: user.email });
+            } else {
+                res.status(HttpCodes.ClientSideErrorRespons.BadRequest).send("User already exists");
+            }
+        } catch (error) {
+         
+            res.status(HttpCodes.ClientSideErrorRespons.InternalServerError).send("An error occurred while creating the user.");
         }
     } else {
         res.status(HttpCodes.ClientSideErrorRespons.BadRequest).send("Missing data fields");

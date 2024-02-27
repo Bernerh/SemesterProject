@@ -29,12 +29,7 @@
     </template>
 
     <template id="loginTemplate">
-
-        <button onclick="window.location.href='index.html';" class="home-button">
-            Start Page
-        </button>
-
-
+        <button onclick="window.location.href='index.html';" class="home-button">Start Page</button>
         <div class="menu-bar">
             <h1>Login</h1>
         </div>
@@ -42,11 +37,23 @@
             <input type="email" id="email" name="email" placeholder="Email" required />
             <input type="password" id="password" name="password" placeholder="Password" required />
             <button type="submit">Login</button>
+        </form>
+        <div id="postLoginActions" style="display:none;">
             <button type="button" id="editInfoButton">Edit Info</button>
             <button type="button" id="deleteUserButton">Delete User</button>
-        </form>
+        </div>
+
+        <!-- Edit Info Form -->
+        <div id="editInfoForm" style="display:none;">
+            <h2>Edit User Information</h2>
+            <form id="editUserForm">
+                Email: <input type="email" id="editEmail" name="email" placeholder="New Email"><br>
+                Password: <input type="password" id="editPassword" name="password" placeholder="New Password"><br>
+                <button type="submit">Update Info</button>
+            </form>
         </div>
     </template>
+
 
     <template id="signUpTemplate">
 
@@ -65,9 +72,43 @@
         </form>
     </template>
 
+    <!-- CARDS -->
+    <template id="findCardsMenuTemplate">
+        <button onclick="window.location.href='index.html';" class="home-button">Start Page</button>
+        <div class="menu-bar">
+            <h1>Find Cards</h1>
+        </div>
+        <div class="button-container">
+            <button id="createCardsButton">Create Cards</button>
+            <button id="getCardsButton">Get Cards</button>
+            <button id="deleteCardsButton">Delete Cards</button>
+        </div>
+    </template>
+
+    <!-- 
+    <template id="createCardTemplate">
+        <button onclick="window.location.href='index.html';" class="home-button">Start Page</button>
+        <div class="menu-bar">
+            <h1>Create</h1>
+        </div>
+        <form id="createCardForm" class="auth-form">
+            <input type="text" id="cardName" name="cardName" placeholder="Card Name" required />
+            <input type="text" id="wordSentence1" name="wordSentence" placeholder="Word/Sentence" required />
+            <input type="text" id="meaning1" name="meaning" placeholder="Meaning" required />
+            <input type="text" id="wordSentence2" name="wordSentence" placeholder="Word/Sentence" />
+            <input type="text" id="meaning2" name="meaning" placeholder="Meaning" />
+            <input type="text" id="wordSentence3" name="wordSentence" placeholder="Word/Sentence" />
+            <input type="text" id="meaning3" name="meaning" placeholder="Meaning" />
+            <button type="submit">Publish</button>
+        </form>
+    </template> 
+-->
+
+    <!-- <div id="loginMessageContainer" class="loginMessageContainer">  </div>-->
+
     <script type="module" src="scripts/main.mjs"></script>
-    <script type="module" src="scripts/login.mjs"></script>
     <script type="module" src="scripts/signUp.mjs"></script>
+    <script type="module" src="scripts/createCards.mjs"></script>
 </body>
 
 </html>
