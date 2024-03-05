@@ -15,7 +15,7 @@ export function addEventListenerLogin(container) {
                     const loggedInMessage = document.createElement('p');
                     loggedInMessage.textContent = `Logged in with mail ${data.email}`;
                     document.body.insertBefore(loggedInMessage, document.body.firstChild);
-
+                    // local storage her og save
 
                     console.log(`Logged in with mail ${data.email}`);
 

@@ -1,12 +1,13 @@
 import pg from "pg"
 import SuperLogger from "./SuperLogger.mjs";
- 
+import "dotenv/config";
+
 // We are using an enviorment variable to get the db credentials 
 if (process.env.DB_CONNECTIONSTRING == undefined) {
     throw ("You forgot the db connection string");
 }
 
-/// TODO: is the structure / design of the DBManager as good as it could be?
+/// TODO: is the structure / design of the DBManager as good as it could be? 
 
 class DBManager {
 
@@ -90,6 +91,29 @@ class DBManager {
 
         return user;
 
+    }
+
+    async findUser(userEmail){
+
+        const client = new pg.Client(this.#credentials);
+
+        let user;
+
+        try {
+            await client.connect();
+            const output = await client.query('SELECT * FROM "public"."Users" WHERE email = $1;', [userEmail]);
+
+            // Client.Query returns an object of type pg.Result (https://node-postgres.com/apis/result)
+            // Of special intrest is the rows and rowCount properties of this object.
+            user = output.rows[0];
+        } catch (error) {
+            console.error(error);
+            //TODO : Error handling?? Remember that this is a module seperate from your server 
+        } finally {
+            client.end(); // Always disconnect from the database.
+        }
+
+        return user;
     }
 
 }

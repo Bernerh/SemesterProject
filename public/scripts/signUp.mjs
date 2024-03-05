@@ -1,5 +1,5 @@
-export function initializeSignUpForm() {
-    const signupForm = document.getElementById("signupForm");
+export function addEventListenerSignUp() {  // (addEventListenerSignUp )initializeSignUpForm
+    const signupForm = document.querySelector("#signupForm");
 
     if (signupForm) {
         signupForm.addEventListener("submit", function (event) {
@@ -19,6 +19,7 @@ export function initializeSignUpForm() {
                 body: JSON.stringify(data)
             })
             .then(response => {
+                console.log(response.status);
                 if (!response.ok) {
                     return response.text().then(text => { throw new Error(text || "Network response was not ok"); });
                 }

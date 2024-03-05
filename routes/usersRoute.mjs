@@ -5,7 +5,7 @@ import SuperLogger from "../modules/SuperLogger.mjs";
 import Chalk from "chalk";
 import { passwordStrengthColor } from "../modules/SuperLogger.mjs";
 import bcrypt from 'bcrypt';
-//import DBManager from "../modules/storageManager.mjs";
+import DBManager from "../modules/storageManager.mjs";
 
 const USER_API = express.Router();
 const users = [];
@@ -45,30 +45,28 @@ const checkPasswordStrength = (req, res, next) => {
 
 
 USER_API.post("/login", async (req, res) => {
-    
-    const { email, password } = req.body;
-    const user = users.find(u => u.email === email);
-    if (user) {
-        try {
-            console.log("The password I wrote was: " + password);
-            console.log("Users password is: " + user.pswHash);
 
-            const match = await bcrypt.compare(password, user.pswHash);
-          
-            /*DELETE 3 LOGS*/
-            SuperLogger.log(`Attempting login for user: ${user.email}`); //NEW
-            SuperLogger.log(`Hashed password for ${user.email}: ${user.pswHash}`,);//NEW
-            SuperLogger.log(`Password match for ${user.email}: ${match}`);//NEW
-            
-            if (match) {
-                const userId = users.indexOf(user);
-                res.status(HttpCodes.SuccesfullRespons.Ok).json({ success: true, id: userId, name: user.name, email: user.email });
-                // Session or token?
-            } else {
-                res.status(HttpCodes.ClientSideErrorRespons.Unauthorized).json({ success: false, message: "Invalid email or password" });
-            }
-        } catch (error) {
-            res.status(HttpCodes.ClientSideErrorRespons.InternalServerError).json({ success: false, message: "An error occurred during login." });
+    const { email, password } = req.body;
+    //const user = users.find(u => u.email === email);
+    const user = await DBManager.findUser(email);
+    console.log(user);
+    if (user) {
+
+        console.log("The password I wrote was: " + password);
+        console.log("Users password is: " + user.password);
+
+        const match = await bcrypt.compare(password, user.password);
+
+        SuperLogger.log(`Attempting login for user: ${user.email}`);
+        SuperLogger.log(`Hashed password for ${user.email}: ${user.pswHash}`,);
+        SuperLogger.log(`Password match for ${user.email}: ${match}`);
+
+        if (match) {
+            const userId = users.indexOf(user);
+            res.status(HttpCodes.SuccesfullRespons.Ok).json({ success: true, id: userId, name: user.name, email: user.email });
+
+        } else {
+            res.status(HttpCodes.ClientSideErrorRespons.Unauthorized).json({ success: false, message: "Invalid email or password" });
         }
     } else {
         res.status(HttpCodes.ClientSideErrorRespons.NotFound).json({ success: false, message: "User not found" });
@@ -79,26 +77,25 @@ USER_API.post("/login", async (req, res) => {
 USER_API.post("/", checkPasswordStrength, async (req, res) => {
     const { name, email, password } = req.body;
     if (name && email && password) {
-        try {
-            const hashedPassword = await bcrypt.hash(password, 10);
-            const user = new User();
-            user.name = name;
-            user.email = email;
-            user.pswHash = hashedPassword; // Save hashed password
 
-            let exists = users.some(u => u.email.toLowerCase() === email.toLowerCase());
-            if (!exists) {
-                users.push(user);
-                SuperLogger.log(`Created user: ${name}`, SuperLogger.LOGGING_LEVELS.IMPORTANT);
+        const hashedPassword = await bcrypt.hash(password, 10);
+        let user = new User();
+        user.name = name;
+        user.email = email;
+        user.pswHash = hashedPassword; // Save hashed password
 
-                res.status(HttpCodes.SuccesfullRespons.Ok).send({ name: user.name, email: user.email });
-            } else {
-                res.status(HttpCodes.ClientSideErrorRespons.BadRequest).send("User already exists");
-            }
-        } catch (error) {
-         
-            res.status(HttpCodes.ClientSideErrorRespons.InternalServerError).send("An error occurred while creating the user.");
+        let exists = users.some(u => u.email.toLowerCase() === email.toLowerCase());
+        if (!exists) {
+            user = await user.save(); //TO DATABASE
+            //users.push(user); //LOCAL
+
+            SuperLogger.log(`Created user: ${name}`, SuperLogger.LOGGING_LEVELS.IMPORTANT);
+
+            res.status(HttpCodes.SuccesfullRespons.Ok).send({ name: user.name, email: user.email });
+        } else {
+            res.status(HttpCodes.ClientSideErrorRespons.BadRequest).send("User already exists");
         }
+
     } else {
         res.status(HttpCodes.ClientSideErrorRespons.BadRequest).send("Missing data fields");
     }

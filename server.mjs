@@ -1,8 +1,10 @@
 import express from 'express' // Express is installed using npm
 import USER_API from './routes/usersRoute.mjs'; // This is where we have defined the API for working with users.
 import SuperLogger from './modules/SuperLogger.mjs';
-//import 'dotenv/config';  //Postgres stuff *delete
+import "dotenv/config"; //Postgres stuff *delete
 //import DBManager from './storageManager.mjs';//Postgres stuff *delete
+
+console.log(process.env.DB_CONNECTIONSTRING)
 
 // Creating an instance of the server
 const server = express();
@@ -33,5 +35,4 @@ server.get("/", (req, res, next) => {
 server.listen(server.get('port'), function () {
     console.log('server running', server.get('port'));
 });
-
 
