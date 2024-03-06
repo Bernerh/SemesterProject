@@ -6,6 +6,23 @@ import Chalk from "chalk";
 import { passwordStrengthColor } from "../modules/SuperLogger.mjs";
 import bcrypt from 'bcrypt';
 import DBManager from "../modules/storageManager.mjs";
+import {verifyToken} from "../modules/token.mjs"; //use as middleware on requests
+
+//NEW UNDER FOR TOKENS
+
+import jwt from 'jsonwebtoken';
+import dotenv from 'dotenv';
+dotenv.config();
+
+/*
+import { verifyToken } from '../modules/token.mjs';
+
+USER_API.get("/protectedRoute", verifyToken, (req, res) => {
+    
+});
+*/
+
+//NEW ABOVE FOR TOKENS
 
 const USER_API = express.Router();
 const users = [];
@@ -63,6 +80,27 @@ USER_API.post("/login", async (req, res) => {
 
         if (match) {
             const userId = users.indexOf(user);
+            // SEND TOKEN TO USER HERE
+
+            //NEW UNDER for tokens
+
+            // Inside login route, after successful authentication
+            const token = jwt.sign(
+                { userId: user.id, email: user.email },
+                process.env.JWT_SECRET, // Secret key, in environment variable
+                { expiresIn: '1h' } // token expires in 1 hour
+            );
+
+            res.status(HttpCodes.SuccesfullRespons.Ok).json({
+                success: true,
+                id: userId,
+                name: user.name,
+                email: user.email,
+                token // Send the token to the client
+            });
+
+            //NEW ABOVE for tokens
+
             res.status(HttpCodes.SuccesfullRespons.Ok).json({ success: true, id: userId, name: user.name, email: user.email });
 
         } else {
