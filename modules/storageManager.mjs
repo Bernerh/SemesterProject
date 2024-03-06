@@ -44,13 +44,15 @@ class DBManager {
 
     }
 
-    async deleteUser(user) {
+    async deleteUser(id) {
 
         const client = new pg.Client(this.#credentials);
 
+        let output;
+
         try {
             await client.connect();
-            const output = await client.query('Delete from "public"."Users"  where id = $1;', [user.id]);
+            output = await client.query('Delete from "public"."Users"  where id = $1;', [id]);
 
             // Client.Query returns an object of type pg.Result (https://node-postgres.com/apis/result)
             // Of special intrest is the rows and rowCount properties of this object.
@@ -63,7 +65,7 @@ class DBManager {
             client.end(); // Always disconnect from the database.
         }
 
-        return user;
+        return output;
     }
 
     async createUser(user) {
@@ -117,14 +119,4 @@ class DBManager {
     }
 
 }
-
-
-
-
-
-
-
-
 export default new DBManager(process.env.DB_CONNECTIONSTRING);
-
-//

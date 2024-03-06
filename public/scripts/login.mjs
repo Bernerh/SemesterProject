@@ -14,8 +14,12 @@ export function addEventListenerLogin(container) {
                 if (data.success) {
                     const loggedInMessage = document.createElement('p');
                     loggedInMessage.textContent = `Logged in with mail ${data.email}`;
-                    document.body.insertBefore(loggedInMessage, document.body.firstChild);
-                    // local storage her og save
+                    container.appendChild(loggedInMessage);
+
+                    //local storage and save
+                    localStorage.setItem('token', data.token);
+                    console.log(`Token received and stored: ${data.token}`);
+                
 
                     console.log(`Logged in with mail ${data.email}`);
 
@@ -30,3 +34,29 @@ export function addEventListenerLogin(container) {
 
     });
 }
+
+export function addEventListenerDelete(container){
+    container.querySelector("#deleteUserButton").addEventListener("click", async function(event) {
+        event.preventDefault();
+
+        const token = localStorage.getItem("token");
+
+        try {
+            const response = await fetch("/users", {
+                method: "DELETE",
+                headers: {
+                    authorization: token,
+                }
+            });
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            console.log("User deleted:", userId);
+        } catch (error) {
+            console.error("Error deleting user:", error);
+        }
+    });
+}
+
+
+

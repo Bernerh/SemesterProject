@@ -6,21 +6,13 @@ import Chalk from "chalk";
 import { passwordStrengthColor } from "../modules/SuperLogger.mjs";
 import bcrypt from 'bcrypt';
 import DBManager from "../modules/storageManager.mjs";
-import {verifyToken} from "../modules/token.mjs"; //use as middleware on requests
+import { verifyToken } from "../modules/token.mjs"; //use as middleware on requests
 
 //NEW UNDER FOR TOKENS
 
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
 dotenv.config();
-
-/*
-import { verifyToken } from '../modules/token.mjs';
-
-USER_API.get("/protectedRoute", verifyToken, (req, res) => {
-    
-});
-*/
 
 //NEW ABOVE FOR TOKENS
 
@@ -86,7 +78,7 @@ USER_API.post("/login", async (req, res) => {
 
             // Inside login route, after successful authentication
             const token = jwt.sign(
-                { userId: user.id, email: user.email },
+                { userId: user.id,},
                 process.env.JWT_SECRET, // Secret key, in environment variable
                 { expiresIn: '1h' } // token expires in 1 hour
             );
@@ -100,8 +92,12 @@ USER_API.post("/login", async (req, res) => {
             });
 
             //NEW ABOVE for tokens
+           
+            SuperLogger.log(`User logged in and token generated for: ${user.email}`, SuperLogger.LOGGING_LEVELS.IMPORTANT); //DELTE 0603
 
-            res.status(HttpCodes.SuccesfullRespons.Ok).json({ success: true, id: userId, name: user.name, email: user.email });
+            //remove-COMMENT 0603
+            /* res.status(HttpCodes.SuccesfullRespons.Ok).json({ success: true, id: userId, name: user.name, email: user.email });
+            */ 
 
         } else {
             res.status(HttpCodes.ClientSideErrorRespons.Unauthorized).json({ success: false, message: "Invalid email or password" });
@@ -156,7 +152,13 @@ USER_API.put("/:id", (req, res) => {
     res.json(user);
 })
 
-USER_API.delete("/:id", (req, res) => {
+USER_API.delete("/", verifyToken, async (req, res) => {
+    const noe = await DBManager.deleteUser(req.user.userId);
+
+    res.send("Test");
+    
+    //DELETE UNDER
+    /*
     const userIndex = Number(req.params.id);
 
     if (userIndex < 0 || userIndex >= users.length) {
@@ -167,6 +169,7 @@ USER_API.delete("/:id", (req, res) => {
     users.splice(userIndex, 1);
     SuperLogger.log(`Deleted user at index: ${userIndex}`, SuperLogger.LOGGING_LEVELS.IMPORTANT);
     res.send(`User with ID ${userIndex} deleted`);
+    */
 })
 
 export default USER_API;

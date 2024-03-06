@@ -1,5 +1,5 @@
 import { addEventListenerSignUp } from "./signUp.mjs";
-import { addEventListenerLogin } from "./login.mjs";
+import { addEventListenerLogin, addEventListenerDelete } from "./login.mjs";
 
 const startPageTemplate = document.getElementById("startPageTemplate");
 const signUpTemplate = document.getElementById("signUpTemplate");
@@ -29,6 +29,7 @@ function showPageByTemplate(templateName) {
     clone = loginTemplate.content.cloneNode(true);
     container.appendChild(clone);
     addEventListenerLogin(container);
+    addEventListenerDelete(container);
   }
 
   else if (templateName == "findCards") {

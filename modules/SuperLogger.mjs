@@ -80,10 +80,8 @@ class SuperLogger {
         }
 
         logger.#writeToLog(msg);
-        
-    }
 
-    
+    }
 
     // This is our automatic logger, it outputs at a "normal" level
     // It is just a convinent wrapper around the more generic createLimitedRequestLogger function
@@ -136,6 +134,5 @@ class SuperLogger {
         fs.appendFile("./log.txt", msg, { encoding: "utf8" }, (err) => { });
     }
 }
-
 
 export default SuperLogger
