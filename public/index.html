@@ -38,11 +38,9 @@
             <input type="password" id="password" name="password" placeholder="Password" required />
             <button type="submit">Login</button>
             <button type="button" id="editInfoButton">Edit</button>
-            <button type="button" id="deleteUserButton">Delete</button> 
+            <button type="button" id="deleteUserButton">Delete</button>
         </form>
-        
     </template>
-
 
     <template id="signUpTemplate">
 
@@ -65,7 +63,7 @@
     <template id="findCardMenuTemplate">
         <button onclick="window.location.href='index.html';" class="home-button">Start Page</button>
 
-        
+
         <div class="menu-bar">
             <h1>Find Cards</h1>
         </div>
@@ -76,7 +74,7 @@
         </div>
     </template>
 
-    
+
     <template id="createCardTemplate">
         <button onclick="window.location.href='index.html';" class="home-button">Start Page</button>
         <div class="menu-bar">
@@ -92,7 +90,24 @@
             <input type="text" id="meaning3" name="meaning" placeholder="Meaning" />
             <button type="submit">Publish</button>
         </form>
-    </template> 
+    </template>
+
+    <template id="getCardTemplate">
+        <div id="card-sets-container">
+           
+        </div>
+    </template>
+
+    <template id="flashCardTemplate">
+        <div class="flashcard-container">
+          <div class="flashcard">
+            <div class="flashcard-content">
+              <span class="word">Word/Sentence</span>
+              <span class="meaning">Meaning</span>
+            </div>
+          </div>
+        </div>
+      </template>
 
 
     <!-- <div id="loginMessageContainer" class="loginMessageContainer">  </div>-->
@@ -100,6 +115,8 @@
     <script type="module" src="scripts/main.mjs"></script>
     <script type="module" src="scripts/signUp.mjs"></script>
     <script type="module" src="scripts/createCards.mjs"></script>
+    <script type="module" src="scripts/cardOperations.mjs"></script>
+
 </body>
 
 </html>

@@ -1,11 +1,13 @@
 import { addEventListenerSignUp } from "./signUp.mjs";
 import { addEventListenerLogin, addEventListenerDelete } from "./login.mjs";
+import { createCard, getCards } from "./cardOperations.mjs";
 
 const startPageTemplate = document.getElementById("startPageTemplate");
 const signUpTemplate = document.getElementById("signUpTemplate");
 const loginTemplate = document.getElementById("loginTemplate");
 const findCardMenuTemplate = document.getElementById("findCardMenuTemplate");
 const createCardTemplate = document.getElementById("createCardTemplate");
+const getCardTemplate = document.getElementById("getCardTemplate");
 
 function showPageByTemplate(templateName) {
   let clone;
@@ -36,14 +38,35 @@ function showPageByTemplate(templateName) {
     clone = findCardMenuTemplate.content.cloneNode(true);
     container.appendChild(clone);
     document.getElementById("createCardsButton").addEventListener("click", () => showPageByTemplate("createCard"));
-    //document.getElementById("getCardsButton").addEventListener("click", () => showPageByTemplate("getCards"));
-    // document.getElementById("delteCardsButton").addEventListener("click", () => showPageByTemplate("deleteCards"));
+    document.getElementById("getCardsButton").addEventListener("click", () => showPageByTemplate("getCards"));
+    //document.getElementById("delteCardsButton").addEventListener("click", () => showPageByTemplate("deleteCards"));
   }
 
   else if (templateName == "createCard") {
     clone = createCardTemplate.content.cloneNode(true);
     container.appendChild(clone);
-    //addEventListenerCreateCards(container);  //Add funksjon seinare
+    const form = container.querySelector("#createCardForm");
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      createCard(form);
+    });
+   
+  }
+
+  else if (templateName == "getCards") {
+    clone = getCardTemplate.content.cloneNode(true);
+    container.appendChild(clone);
+
+    getCards();
+
+    const cardContainer = container.querySelector("#card-sets-container");
+    const cards = JSON.parse(localStorage.getItem("cards"));
+
+    for (let i = 0; i < cards.length; i++){
+      const h2 = document.createElement("h2");
+      h2.innerText = cards[i].cardName;
+      cardContainer.appendChild(h2);
+    }
   }
 
 }

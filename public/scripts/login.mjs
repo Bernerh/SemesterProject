@@ -20,9 +20,7 @@ export function addEventListenerLogin(container) {
                     localStorage.setItem('token', data.token);
                     console.log(`Token received and stored: ${data.token}`);
                 
-
                     console.log(`Logged in with mail ${data.email}`);
-
 
                 } else {
                     alert('Login failed: ' + data.message);
@@ -31,7 +29,6 @@ export function addEventListenerLogin(container) {
             .catch(error => {
                 console.error('Error:', error);
             });
-
     });
 }
 

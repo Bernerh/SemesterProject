@@ -95,7 +95,7 @@ class DBManager {
 
     }
 
-    async findUser(userEmail){
+    async findUser(userEmail) {
 
         const client = new pg.Client(this.#credentials);
 
@@ -118,5 +118,49 @@ class DBManager {
         return user;
     }
 
+    //NEW CARD RELATED STUFF
+
+    async createCard(cardData) {
+
+        const client = new pg.Client(this.#credentials);
+
+        try {
+            await client.connect();
+            const output = await client.query('INSERT INTO "public"."Card"("cardName", "wordSentence", "meaning") VALUES($1::Text, $2::Text, $3::Text);', [cardData.cardName, cardData.wordSentence, cardData.meaning]);
+
+            // Client.Query returns an object of type pg.Result (https://node-postgres.com/apis/result)
+            // Of special intrest is the rows and rowCount properties of this object.
+
+        } catch (error) {
+            console.error(error);
+            //TODO : Error handling?? Remember that this is a module seperate from your server 
+        } finally {
+            client.end(); // Always disconnect from the database.
+        }
+
+    }
+
+    async getCards(){
+        const client = new pg.Client(this.#credentials);
+
+        let cards;
+
+        try {
+            await client.connect();
+            const output = await client.query('SELECT * FROM "public"."Card";');
+
+            // Client.Query returns an object of type pg.Result (https://node-postgres.com/apis/result)
+            // Of special intrest is the rows and rowCount properties of this object.
+            cards = output.rows;
+
+        } catch (error) {
+            console.error(error);
+            //TODO : Error handling?? Remember that this is a module seperate from your server 
+        } finally {
+            client.end(); // Always disconnect from the database.
+        }
+
+        return cards;
+    }
 }
 export default new DBManager(process.env.DB_CONNECTIONSTRING);
