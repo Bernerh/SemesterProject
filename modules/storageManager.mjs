@@ -2,12 +2,9 @@ import pg from "pg"
 import SuperLogger from "./SuperLogger.mjs";
 import "dotenv/config";
 
-// We are using an enviorment variable to get the db credentials 
 if (process.env.DB_CONNECTIONSTRING == undefined) {
     throw ("You forgot the db connection string");
 }
-
-/// TODO: is the structure / design of the DBManager as good as it could be? 
 
 class DBManager {
 
@@ -35,9 +32,11 @@ class DBManager {
             //TODO Did we update the user?
 
         } catch (error) {
-            //TODO : Error handling?? Remember that this is a module seperate from your server 
+            //TODO : Error handling??
+            SuperLogger.log('Update User failed: ' + error.message, SuperLogger.LOGGING_LEVELS.ERROR);
+
         } finally {
-            client.end(); // Always disconnect from the database.
+            client.end();
         }
 
         return user;
@@ -54,15 +53,11 @@ class DBManager {
             await client.connect();
             output = await client.query('Delete from "public"."Users"  where id = $1;', [id]);
 
-            // Client.Query returns an object of type pg.Result (https://node-postgres.com/apis/result)
-            // Of special intrest is the rows and rowCount properties of this object.
-
-            //TODO: Did the user get deleted?
-
         } catch (error) {
-            //TODO : Error handling?? Remember that this is a module seperate from your server 
+            //TODO : Error handling??
+            SuperLogger.log('Deltete User Error: ' + error.message, SuperLogger.LOGGING_LEVELS.ERROR);
         } finally {
-            client.end(); // Always disconnect from the database.
+            client.end();
         }
 
         return output;
@@ -76,19 +71,16 @@ class DBManager {
             await client.connect();
             const output = await client.query('INSERT INTO "public"."Users"("name", "email", "password") VALUES($1::Text, $2::Text, $3::Text) RETURNING id;', [user.name, user.email, user.pswHash]);
 
-            // Client.Query returns an object of type pg.Result (https://node-postgres.com/apis/result)
-            // Of special intrest is the rows and rowCount properties of this object.
-
             if (output.rows.length == 1) {
-                // We stored the user in the DB.
                 user.id = output.rows[0].id;
             }
 
         } catch (error) {
             console.error(error);
-            //TODO : Error handling?? Remember that this is a module seperate from your server 
+            //TODO : Error handling??
+            SuperLogger.log('Create User ERROR: ' + error.message, SuperLogger.LOGGING_LEVELS.ERROR);
         } finally {
-            client.end(); // Always disconnect from the database.
+            client.end();
         }
 
         return user;
@@ -96,29 +88,23 @@ class DBManager {
     }
 
     async findUser(userEmail) {
-
         const client = new pg.Client(this.#credentials);
-
         let user;
 
         try {
             await client.connect();
             const output = await client.query('SELECT * FROM "public"."Users" WHERE email = $1;', [userEmail]);
-
-            // Client.Query returns an object of type pg.Result (https://node-postgres.com/apis/result)
-            // Of special intrest is the rows and rowCount properties of this object.
             user = output.rows[0];
         } catch (error) {
             console.error(error);
-            //TODO : Error handling?? Remember that this is a module seperate from your server 
+            //TODO : Error handling??
+            SuperLogger.log('Find User Error: ' + error.message, SuperLogger.LOGGING_LEVELS.ERROR);
         } finally {
-            client.end(); // Always disconnect from the database.
+            client.end();
         }
 
         return user;
     }
-
-    //NEW CARD RELATED STUFF
 
     async createCard(cardData) {
 
@@ -128,19 +114,17 @@ class DBManager {
             await client.connect();
             const output = await client.query('INSERT INTO "public"."Card"("cardName", "wordSentence", "meaning") VALUES($1::Text, $2::Text, $3::Text);', [cardData.cardName, cardData.wordSentence, cardData.meaning]);
 
-            // Client.Query returns an object of type pg.Result (https://node-postgres.com/apis/result)
-            // Of special intrest is the rows and rowCount properties of this object.
-
         } catch (error) {
             console.error(error);
-            //TODO : Error handling?? Remember that this is a module seperate from your server 
+            //TODO : Error handling??
+            SuperLogger.log('Create Cards Error: ' + error.message, SuperLogger.LOGGING_LEVELS.ERROR);
         } finally {
-            client.end(); // Always disconnect from the database.
+            client.end();
         }
 
     }
 
-    async getCards(){
+    async getCards() {
         const client = new pg.Client(this.#credentials);
 
         let cards;
@@ -148,19 +132,38 @@ class DBManager {
         try {
             await client.connect();
             const output = await client.query('SELECT * FROM "public"."Card";');
-
-            // Client.Query returns an object of type pg.Result (https://node-postgres.com/apis/result)
-            // Of special intrest is the rows and rowCount properties of this object.
             cards = output.rows;
 
         } catch (error) {
             console.error(error);
-            //TODO : Error handling?? Remember that this is a module seperate from your server 
+            //TODO : Error handling??
+            SuperLogger.log('Get Cards Error: ' + error.message, SuperLogger.LOGGING_LEVELS.ERROR);
         } finally {
-            client.end(); // Always disconnect from the database.
+            client.end();
         }
 
         return cards;
+    }
+
+    async getCardInfo(id) {
+        const client = new pg.Client(this.#credentials);
+
+        let card;
+
+        try {
+            await client.connect();
+            const output = await client.query('SELECT * FROM "public"."Card" WHERE "cardID" = $1;', [id]);
+
+            card = output.rows;
+        } catch (error) {
+            console.error(error);
+            //TODO : Error handling??
+            SuperLogger.log('Get Cards Error: ' + error.message, SuperLogger.LOGGING_LEVELS.ERROR);
+        } finally {
+            client.end();
+        }
+
+        return card;
     }
 }
 export default new DBManager(process.env.DB_CONNECTIONSTRING);

@@ -8,13 +8,9 @@ import bcrypt from 'bcrypt';
 import DBManager from "../modules/storageManager.mjs";
 import { verifyToken } from "../modules/token.mjs"; //use as middleware on requests
 
-//NEW UNDER FOR TOKENS
-
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
 dotenv.config();
-
-//NEW ABOVE FOR TOKENS
 
 const USER_API = express.Router();
 const users = [];
@@ -72,15 +68,11 @@ USER_API.post("/login", async (req, res) => {
 
         if (match) {
             const userId = users.indexOf(user);
-            // SEND TOKEN TO USER HERE
-
-            //NEW UNDER for tokens
-
-            // Inside login route, after successful authentication
+           
             const token = jwt.sign(
                 { userId: user.id,},
-                process.env.JWT_SECRET, // Secret key, in environment variable
-                { expiresIn: '1h' } // token expires in 1 hour
+                process.env.JWT_SECRET,
+                { expiresIn: '1h' }
             );
 
             res.status(HttpCodes.SuccesfullRespons.Ok).json({
@@ -88,16 +80,12 @@ USER_API.post("/login", async (req, res) => {
                 id: userId,
                 name: user.name,
                 email: user.email,
-                token // Send the token to the client
+                token
             });
 
-            //NEW ABOVE for tokens
            
-            SuperLogger.log(`User logged in and token generated for: ${user.email}`, SuperLogger.LOGGING_LEVELS.IMPORTANT); //DELTE 0603
-
-            //remove-COMMENT 0603
-            /* res.status(HttpCodes.SuccesfullRespons.Ok).json({ success: true, id: userId, name: user.name, email: user.email });
-            */ 
+           
+            SuperLogger.log(`User logged in and token generated for: ${user.email}`, SuperLogger.LOGGING_LEVELS.IMPORTANT); 
 
         } else {
             res.status(HttpCodes.ClientSideErrorRespons.Unauthorized).json({ success: false, message: "Invalid email or password" });
@@ -156,20 +144,6 @@ USER_API.delete("/", verifyToken, async (req, res) => {
     const noe = await DBManager.deleteUser(req.user.userId);
 
     res.send("Test");
-    
-    //DELETE UNDER
-    /*
-    const userIndex = Number(req.params.id);
-
-    if (userIndex < 0 || userIndex >= users.length) {
-        SuperLogger.log(`User with index: ${userIndex} not found`, SuperLogger.LOGGING_LEVELS.IMPORTANT);
-        return res.status(HttpCodes.ClientSideErrorRespons.NotFound).send("User not found");
-    }
-
-    users.splice(userIndex, 1);
-    SuperLogger.log(`Deleted user at index: ${userIndex}`, SuperLogger.LOGGING_LEVELS.IMPORTANT);
-    res.send(`User with ID ${userIndex} deleted`);
-    */
 })
 
 export default USER_API;

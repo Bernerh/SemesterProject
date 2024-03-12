@@ -1,6 +1,6 @@
 import { addEventListenerSignUp } from "./signUp.mjs";
 import { addEventListenerLogin, addEventListenerDelete } from "./login.mjs";
-import { createCard, getCards } from "./cardOperations.mjs";
+import { createCard, getCards, getCardInfo } from "./cardOperations.mjs";
 
 const startPageTemplate = document.getElementById("startPageTemplate");
 const signUpTemplate = document.getElementById("signUpTemplate");
@@ -8,8 +8,9 @@ const loginTemplate = document.getElementById("loginTemplate");
 const findCardMenuTemplate = document.getElementById("findCardMenuTemplate");
 const createCardTemplate = document.getElementById("createCardTemplate");
 const getCardTemplate = document.getElementById("getCardTemplate");
+const flashCardTemplate = document.getElementById("flashCardTemplate");
 
-function showPageByTemplate(templateName) {
+async function showPageByTemplate(templateName) {
   let clone;
   const container = document.getElementById("container");
   container.innerHTML = "";
@@ -50,11 +51,11 @@ function showPageByTemplate(templateName) {
       event.preventDefault();
       createCard(form);
     });
-   
   }
 
   else if (templateName == "getCards") {
     clone = getCardTemplate.content.cloneNode(true);
+    //clone = flashCardTemplate.content.cloneNode(true);//Meir bal
     container.appendChild(clone);
 
     getCards();
@@ -62,13 +63,32 @@ function showPageByTemplate(templateName) {
     const cardContainer = container.querySelector("#card-sets-container");
     const cards = JSON.parse(localStorage.getItem("cards"));
 
-    for (let i = 0; i < cards.length; i++){
+    for (let i = 0; i < cards.length; i++) {
       const h2 = document.createElement("h2");
       h2.innerText = cards[i].cardName;
+
+      h2.addEventListener("click", () => {
+        showPageByTemplate("flashCardTemplate");
+        sessionStorage.setItem("cardID", cards[i].cardID)
+        
+      })
       cardContainer.appendChild(h2);
     }
   }
 
+  else if (templateName == "flashCardTemplate"){
+    const cardID = sessionStorage.getItem("cardID");
+
+    const cardInfo = await getCardInfo(cardID);
+
+    clone = flashCardTemplate.content.cloneNode(true);
+
+    //clone.querySelector("#wordSentence").innerText = cardInfo[0].wordSentence;
+
+    container.appendChild(clone);
+
+    console.log(cardInfo);
+  }
 }
 
 showPageByTemplate("startPage");
