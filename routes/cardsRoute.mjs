@@ -6,9 +6,24 @@ export const CARDS_API = express.Router();
 
 CARDS_API.post('/create', verifyToken, async (req, res) => {
 
-    console.log(req.body);
+    //console.log(req.body);
 
-    await DBManager.createCard(req.body);
+    const card = {};
+    card.cardName = req.body.cardName;
+    card.wordSentence = {};
+    card.meaning = {};
+
+    for (let i = 0; i < req.body.wordSentence.length; i++){
+       card.wordSentence[i] = req.body.wordSentence[i];
+    }
+
+    for (let i = 0; i < req.body.meaning.length; i++){
+        card.meaning[i] = req.body.meaning[i];
+    }
+    
+    console.log(card);
+
+    await DBManager.createCard(card);
 
     res.status(200).end();
 });

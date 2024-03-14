@@ -6,10 +6,10 @@ import Chalk from "chalk";
 import { passwordStrengthColor } from "../modules/SuperLogger.mjs";
 import bcrypt from 'bcrypt';
 import DBManager from "../modules/storageManager.mjs";
-import { verifyToken } from "../modules/token.mjs"; //use as middleware on requests
-
+import { verifyToken } from "../modules/token.mjs";
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
+
 dotenv.config();
 
 const USER_API = express.Router();

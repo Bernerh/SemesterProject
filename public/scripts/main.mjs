@@ -55,7 +55,6 @@ async function showPageByTemplate(templateName) {
 
   else if (templateName == "getCards") {
     clone = getCardTemplate.content.cloneNode(true);
-    //clone = flashCardTemplate.content.cloneNode(true);//Meir bal
     container.appendChild(clone);
 
     getCards();
@@ -63,33 +62,61 @@ async function showPageByTemplate(templateName) {
     const cardContainer = container.querySelector("#card-sets-container");
     const cards = JSON.parse(localStorage.getItem("cards"));
 
+ 
     for (let i = 0; i < cards.length; i++) {
-      const h2 = document.createElement("h2");
-      h2.innerText = cards[i].cardName;
+ 
+      const cardNameElement = document.createElement("div");
+      cardNameElement.className = 'card-name'; 
+      cardNameElement.innerText = cards[i].cardName;
 
-      h2.addEventListener("click", () => {
-        showPageByTemplate("flashCardTemplate");
-        sessionStorage.setItem("cardID", cards[i].cardID)
-        
-      })
-      cardContainer.appendChild(h2);
-    }
+      cardNameElement.addEventListener("click", () => {
+          showPageByTemplate("flashCardTemplate");
+          sessionStorage.setItem("cardID", cards[i].cardID)
+      });
+      cardContainer.appendChild(cardNameElement);
+  }
   }
 
-  else if (templateName == "flashCardTemplate"){
+  else if (templateName == "flashCardTemplate") {
     const cardID = sessionStorage.getItem("cardID");
-
     const cardInfo = await getCardInfo(cardID);
-
+  
+    const wordSentences = JSON.parse(cardInfo[0].wordSentence);
+    const meanings = JSON.parse(cardInfo[0].meaning);
+  
+    let currentWordIndex = 0;
+    let showingWord = true;
+  
     clone = flashCardTemplate.content.cloneNode(true);
-
-    //clone.querySelector("#wordSentence").innerText = cardInfo[0].wordSentence;
-
+    const flashcardContent = clone.querySelector(".flashcard-content");
+    const wordSpan = flashcardContent.querySelector("#wordSentence");
+    const meaningSpan = flashcardContent.querySelector("#meaning");
+  
+    const showContent = () => {
+      wordSpan.classList.toggle('shown', showingWord);
+      meaningSpan.classList.toggle('shown', !showingWord);
+      
+      wordSpan.textContent = wordSentences[currentWordIndex];
+      meaningSpan.textContent = meanings[currentWordIndex];
+  
+      console.log(`Current index: ${currentWordIndex}`);
+      console.log(`Showing word: ${showingWord}`);
+    };
+  
+    showContent();
+  
+    flashcardContent.addEventListener('click', () => {
+      if (showingWord) {
+        showingWord = false;
+      } else {
+        currentWordIndex = (currentWordIndex + 1) % Object.keys(wordSentences).length;
+        showingWord = true;
+      }
+      showContent();
+    });
+  
     container.appendChild(clone);
-
-    console.log(cardInfo);
   }
 }
 
 showPageByTemplate("startPage");
-

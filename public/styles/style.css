@@ -103,8 +103,6 @@ html {
     background-color: #FFC107;
 }
 
-/*INSTEAD OF ALERTS, JUST TEXTBOXES, can do later*/
-
 .message {
     text-align: center;
     color: #28a745;
@@ -140,4 +138,79 @@ html {
     background-color: #fff;
     text-align: left;
     padding-left: 20px;
+}
+
+/*FlashCards*/
+
+.flashcard-content .meaning {
+  display: none;
+}
+
+.flashcard-content .word {
+  cursor: pointer; 
+}
+
+.flashcard-content .word.shown {
+  display: block;
+}
+
+.flashcard-content .meaning.shown {
+  display: block;
+}
+
+
+#wordSentence {
+    padding: 100px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 25px;
+    background-color: #FFD700; 
+    color: #000;
+    font-size: 40px;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  #wordSentence:hover {
+    background-color: #FFC107; 
+    transition: background-color 1s;
+  }
+
+
+.flashcard-content .word,
+.flashcard-content .meaning {
+  display: none;
+  padding: 100px; 
+  margin: 10px 0; 
+  border: none;
+  border-radius: 25px; 
+  background-color: #FFD700; 
+  color: #000; 
+  font-size: 40px;
+  text-align: center; 
+  cursor: pointer;
+}
+
+.flashcard-content .word.shown,
+.flashcard-content .meaning.shown {
+  display: block;
+}
+
+#meaning:hover {
+    background-color: #FFC107; 
+    transition: background-color 1s;
+  }
+
+
+  .card-name {
+    padding: 15px;
+    margin: 10px 0;
+    background-color: #FFD700; 
+    color: #000; 
+    text-align: center;
+    border-radius: 25px;
+    font-size: 18px; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+    cursor: pointer; 
+    user-select: none; 
 }
