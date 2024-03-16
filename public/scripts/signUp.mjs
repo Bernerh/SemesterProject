@@ -19,14 +19,12 @@ export function addEventListenerSignUp() {
                 body: JSON.stringify(data)
             })
             .then(response => {
-                console.log(response.status);
                 if (!response.ok) {
                     return response.text().then(text => { throw new Error(text || "Network response was not ok"); });
                 }
                 return response.json();
             })
-            .then(data => {
-                console.log("User created:", data);
+            .then(() => {
                 alert("Account successfully created!");
                
             })

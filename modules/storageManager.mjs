@@ -25,23 +25,9 @@ class DBManager {
 
         try {
             await client.connect();
-
-            const query = `
-                UPDATE "public"."Users"
-                SET "name" = $1, 
-                    "email" = $2,
-                    "password" = $3
-                WHERE "id" = $4
-                RETURNING *;`;
-
-            const params = [
-                user.name,
-                user.email,
-                user.pswHash,
-                user.id
-            ];
-
-            const output = await client.query(query, params);
+            const output = await client.query(
+                'UPDATE "public"."Users" SET "name" = $1, "email" = $2, "password" = $3 WHERE "id" = $4 RETURNING *;', [user.name, user.email, user.pswHash, user.id]
+            );
 
             if (output.rowCount === 0) {
                 throw new Error('User not found.');

@@ -3,8 +3,6 @@ export async function createCard(form) {
 
   const cardForm = new URLSearchParams(new FormData(form));
 
-  console.log(cardForm);
-
   try {
     const response = await fetch("/cards/create", {
       method: 'POST',
@@ -23,7 +21,6 @@ export async function createCard(form) {
   } catch (error) {
     console.error('Error creating card:', error);
   }
-
 }
 
 export async function getCards() {
@@ -39,7 +36,6 @@ export async function getCards() {
 
     const responseData = await response.json();
     if (response.ok) {
-      console.log(responseData);
       localStorage.setItem("cards", JSON.stringify(responseData));
       renderCardSets(responseData);
     } else {
@@ -63,7 +59,6 @@ export async function getCardInfo(id){
 
     const responseData = await response.json();
     if (response.ok) {
-      console.log(responseData);
       return responseData;
     } else {
       throw new Error(responseData.message);
@@ -76,8 +71,6 @@ export async function getCardInfo(id){
 export async function deleteCards(id){
   const token = localStorage.getItem('token');
 
-  console.log(id);
-
   try {
     const response = await fetch("/cards/" + id, {
       method: 'DELETE',
@@ -88,7 +81,6 @@ export async function deleteCards(id){
 
     const responseData = await response.json();
     if (response.ok) {
-      console.log(responseData);
       return responseData;
     } else {
       throw new Error(responseData.message);

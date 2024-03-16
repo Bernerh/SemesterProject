@@ -59,6 +59,9 @@ async function showPageByTemplate(templateName) {
     form.addEventListener("submit", (event) => {
       event.preventDefault();
       createCard(form);
+      const cardLoggedInMessage = document.createElement('h2');
+      cardLoggedInMessage.textContent = `Card Created`;
+      container.appendChild(cardLoggedInMessage);
     });
   }
 
@@ -69,7 +72,6 @@ async function showPageByTemplate(templateName) {
     form.addEventListener("submit", (event) => {
       event.preventDefault();
       const id = container.querySelector("#cardId").value;
-
       deleteCards(id);
     });
   }
@@ -119,9 +121,6 @@ async function showPageByTemplate(templateName) {
 
       wordSpan.textContent = wordSentences[currentWordIndex];
       meaningSpan.textContent = meanings[currentWordIndex];
-
-      console.log(`Current index: ${currentWordIndex}`);
-      console.log(`Showing word: ${showingWord}`);
     };
 
     showContent();

@@ -3,7 +3,6 @@ import { HttpCodes } from './httpConstants.mjs';
 
 export const verifyToken = (req, res, next) => {
     const token = req.headers['authorization'];
-    console.log(token);
     if (!token) {
         
         return res.status(HttpCodes.ClientSideErrorRespons.Forbidden).send("A token is required for authentication");

@@ -3,7 +3,6 @@ import User from "../modules/user.mjs";
 import { HttpCodes, HTTPMethods } from "../modules/httpConstants.mjs";
 import SuperLogger from "../modules/SuperLogger.mjs";
 import Chalk from "chalk";
-import { passwordStrengthColor } from "../modules/SuperLogger.mjs";
 import bcrypt from 'bcrypt';
 import DBManager from "../modules/storageManager.mjs";
 import { verifyToken } from "../modules/token.mjs";
@@ -15,15 +14,7 @@ dotenv.config();
 const USER_API = express.Router();
 const users = [];
 
-const addPasswordStrengthColor = (req, res, next) => {
-    const user = users[parseInt(req.params.id, 10)];
-    if (user) {
-        req.colorizedPassword = passwordStrengthColor(user.pswHash);
-    }
-    next();
-};
-
-USER_API.get("/:id", addPasswordStrengthColor, (req, res) => {
+USER_API.get("/:id", (req, res) => {
     const userIndex = parseInt(req.params.id, 10);
     const user = users[userIndex];
     if (user) {
@@ -53,23 +44,15 @@ USER_API.post("/login", async (req, res) => {
 
     const { email, password } = req.body;
     const user = await DBManager.findUser(email);
-    console.log(user);
+
     if (user) {
-
-        console.log("The password I wrote was: " + password);
-        console.log("Users password is: " + user.password);
-
         const match = await bcrypt.compare(password, user.password);
-
-        SuperLogger.log(`Attempting login for user: ${user.email}`);
-        SuperLogger.log(`Hashed password for ${user.email}: ${user.pswHash}`,);
-        SuperLogger.log(`Password match for ${user.email}: ${match}`);
 
         if (match) {
             const userId = users.indexOf(user);
-           
+
             const token = jwt.sign(
-                { userId: user.id,},
+                { userId: user.id, },
                 process.env.JWT_SECRET,
                 { expiresIn: '1h' }
             );
@@ -82,7 +65,7 @@ USER_API.post("/login", async (req, res) => {
                 token
             });
 
-            SuperLogger.log(`User logged in and token generated for: ${user.email}`, SuperLogger.LOGGING_LEVELS.IMPORTANT); 
+            SuperLogger.log(`User logged in and token generated for: ${user.email}`, SuperLogger.LOGGING_LEVELS.VERBOSE);
 
         } else {
             res.status(HttpCodes.ClientSideErrorRespons.Unauthorized).json({ success: false, message: "Invalid email or password" });
@@ -101,14 +84,13 @@ USER_API.post("/", checkPasswordStrength, async (req, res) => {
         let user = new User();
         user.name = name;
         user.email = email;
-        user.pswHash = hashedPassword; // Save hashed password
+        user.pswHash = hashedPassword;
 
         let exists = users.some(u => u.email.toLowerCase() === email.toLowerCase());
         if (!exists) {
-            user = await user.save(); //TO DATABASE
-            //users.push(user); //LOCAL
+            user = await user.save();
 
-            SuperLogger.log(`Created user: ${name}`, SuperLogger.LOGGING_LEVELS.IMPORTANT);
+            SuperLogger.log(`Created user: ${name}`, SuperLogger.LOGGING_LEVELS.VERBOSE);
 
             res.status(HttpCodes.SuccesfullRespons.Ok).send({ name: user.name, email: user.email });
         } else {
@@ -121,38 +103,37 @@ USER_API.post("/", checkPasswordStrength, async (req, res) => {
 });
 
 USER_API.put("/", verifyToken, async (req, res) => {
+
     const { name, email, password } = req.body;
-        console.log(req.user);
-        const currentUser = await DBManager.findUserById(req.user.userId);
+    const currentUser = await DBManager.findUserById(req.user.userId);
 
-        if (!currentUser) {
-            return res.status(HttpCodes.ClientSideErrorRespons.NotFound).send("User not found");
-        }
-     
-        let hashedPassword;
+    if (!currentUser) {
+        return res.status(HttpCodes.ClientSideErrorRespons.NotFound).send("User not found");
+    }
 
-        if (password != ""){
-            hashedPassword = await bcrypt.hash(password, 10);
-        }
+    let hashedPassword;
 
-        const updatedUser = await DBManager.updateUser({
-            id: req.user.userId,
-            name: name || currentUser.name,
-            email: email || currentUser.email,
-            pswHash: hashedPassword || currentUser.password,
-        });
+    if (password != "") {
+        hashedPassword = await bcrypt.hash(password, 10);
+    }
 
-        res.status(HttpCodes.SuccesfullRespons.Ok).json({
-            id: updatedUser.id,
-            name: updatedUser.name,
-            email: updatedUser.email,
-        });
+    const updatedUser = await DBManager.updateUser({
+        id: req.user.userId,
+        name: name || currentUser.name,
+        email: email || currentUser.email,
+        pswHash: hashedPassword || currentUser.password,
+    });
+
+    res.status(HttpCodes.SuccesfullRespons.Ok).json({
+        id: updatedUser.id,
+        name: updatedUser.name,
+        email: updatedUser.email,
+    });
 })
 
 USER_API.delete("/", verifyToken, async (req, res) => {
-    const deleteTheUser = await DBManager.deleteUser(req.user.userId); 
-
-    res.send("Test");
+    const deleteTheUser = await DBManager.deleteUser(req.user.userId);
+    res.end();
 })
 
 export default USER_API;

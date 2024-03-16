@@ -3,7 +3,7 @@ import Chalk from "chalk";
 import { HTTPMethods } from "./httpConstants.mjs"
 import fs from "fs/promises"
 
-let COLORS = {}; // Creating a lookup tbl to avoid having to use if/else if or switch. 
+let COLORS = {};
 COLORS[HTTPMethods.POST] = Chalk.yellow;
 COLORS[HTTPMethods.PATCH] = Chalk.yellow;
 COLORS[HTTPMethods.PUT] = Chalk.yellow;
@@ -11,20 +11,12 @@ COLORS[HTTPMethods.GET] = Chalk.green;
 COLORS[HTTPMethods.DELETE] = Chalk.red;
 COLORS.Default = Chalk.gray;
 
-export const passwordStrengthColor = (password) => {
-    const strength = password.length;
-    if (strength > 10) return Chalk.green(password);
-    if (strength > 5) return Chalk.yellow(password);
-    return Chalk.red(password);
-};
-
 const colorize = (method) => {
     if (method in COLORS) {
         return COLORS[method](method);
     }
     return COLORS.Default(method);
 };
-
 
 class SuperLogger {
     static LOGGING_LEVELS = {

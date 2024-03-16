@@ -1,6 +1,7 @@
 import DBManager from "./storageManager.mjs";
 
 class createCards {
+
     async createCardSet(cardSetData) {
         try {
             const cardSet = await DBManager.createCardSet(cardSetData);

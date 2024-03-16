@@ -16,8 +16,6 @@ export function addEventListenerLogin(container) {
                     loggedInMessage.textContent = `Logged in with mail ${data.email}`;
                     container.appendChild(loggedInMessage);
                     localStorage.setItem('token', data.token);
-                    console.log(`Token received and stored: ${data.token}`);
-                    console.log(`Logged in with mail ${data.email}`);
                 } else {
                     alert('Login failed: ' + data.message);
                 }
@@ -44,7 +42,6 @@ export function addEventListenerDelete(container) {
             if (!response.ok) {
                 throw new Error(`HTTP error! Status: ${response.status}`);
             }
-            console.log("User deleted:", userId);
         } catch (error) {
             console.error("Error deleting user:", error);
         }
@@ -84,8 +81,7 @@ export function addEventListenerEdit(container) {
                 }
                 return response.json();
             })
-            .then(data => {
-                console.log("User updated:", data);
+            .then(() => {
                 alert("Account successfully updated!");
             })
             .catch(error => {
