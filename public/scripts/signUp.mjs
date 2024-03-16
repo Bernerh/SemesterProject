@@ -1,4 +1,4 @@
-export function addEventListenerSignUp() {  // (addEventListenerSignUp )initializeSignUpForm
+export function addEventListenerSignUp() {
     const signupForm = document.querySelector("#signupForm");
 
     if (signupForm) {

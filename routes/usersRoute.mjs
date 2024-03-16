@@ -52,7 +52,6 @@ const checkPasswordStrength = (req, res, next) => {
 USER_API.post("/login", async (req, res) => {
 
     const { email, password } = req.body;
-    //const user = users.find(u => u.email === email);
     const user = await DBManager.findUser(email);
     console.log(user);
     if (user) {
@@ -83,8 +82,6 @@ USER_API.post("/login", async (req, res) => {
                 token
             });
 
-           
-           
             SuperLogger.log(`User logged in and token generated for: ${user.email}`, SuperLogger.LOGGING_LEVELS.IMPORTANT); 
 
         } else {
@@ -123,25 +120,37 @@ USER_API.post("/", checkPasswordStrength, async (req, res) => {
     }
 });
 
-USER_API.put("/:id", (req, res) => {
+USER_API.put("/", verifyToken, async (req, res) => {
     const { name, email, password } = req.body;
-    const userIndex = req.params.id;
+        console.log(req.user);
+        const currentUser = await DBManager.findUserById(req.user.userId);
 
-    if (userIndex >= users.length) {
-        return res.status(HttpCodes.ClientSideErrorRespons.NotFound).send("User not found");
-    }
+        if (!currentUser) {
+            return res.status(HttpCodes.ClientSideErrorRespons.NotFound).send("User not found");
+        }
+     
+        let hashedPassword;
 
-    const user = users[userIndex];
-    user.name = name || user.name;
-    user.email = email || user.email;
-    user.pswHash = password || user.pswHash;
-    users[userIndex] = user;
+        if (password != ""){
+            hashedPassword = await bcrypt.hash(password, 10);
+        }
 
-    res.json(user);
+        const updatedUser = await DBManager.updateUser({
+            id: req.user.userId,
+            name: name || currentUser.name,
+            email: email || currentUser.email,
+            pswHash: hashedPassword || currentUser.password,
+        });
+
+        res.status(HttpCodes.SuccesfullRespons.Ok).json({
+            id: updatedUser.id,
+            name: updatedUser.name,
+            email: updatedUser.email,
+        });
 })
 
 USER_API.delete("/", verifyToken, async (req, res) => {
-    const noe = await DBManager.deleteUser(req.user.userId);
+    const deleteTheUser = await DBManager.deleteUser(req.user.userId); 
 
     res.send("Test");
 })

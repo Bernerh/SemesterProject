@@ -72,3 +72,29 @@ export async function getCardInfo(id){
     console.error('Error creating card:', error);
   }
 }
+
+export async function deleteCards(id){
+  const token = localStorage.getItem('token');
+
+  console.log(id);
+
+  try {
+    const response = await fetch("/cards/" + id, {
+      method: 'DELETE',
+      headers: {
+        authorization: token,
+      },
+    });
+
+    const responseData = await response.json();
+    if (response.ok) {
+      console.log(responseData);
+      return responseData;
+    } else {
+      throw new Error(responseData.message);
+    }
+  } catch (error) {
+    console.error('Error deleting card:', error);
+  }
+
+}

@@ -15,13 +15,9 @@ export function addEventListenerLogin(container) {
                     const loggedInMessage = document.createElement('p');
                     loggedInMessage.textContent = `Logged in with mail ${data.email}`;
                     container.appendChild(loggedInMessage);
-
-                    //local storage and save
                     localStorage.setItem('token', data.token);
                     console.log(`Token received and stored: ${data.token}`);
-                
                     console.log(`Logged in with mail ${data.email}`);
-
                 } else {
                     alert('Login failed: ' + data.message);
                 }
@@ -32,8 +28,8 @@ export function addEventListenerLogin(container) {
     });
 }
 
-export function addEventListenerDelete(container){
-    container.querySelector("#deleteUserButton").addEventListener("click", async function(event) {
+export function addEventListenerDelete(container) {
+    container.querySelector("#deleteUserButton").addEventListener("click", async function (event) {
         event.preventDefault();
 
         const token = localStorage.getItem("token");
@@ -55,5 +51,46 @@ export function addEventListenerDelete(container){
     });
 }
 
+export function addEventListenerEdit(container) {
+    const editForm = container.querySelector("#editUserForm");
+    
+        editForm.addEventListener("submit", function (event) {
+            event.preventDefault();
 
+            const token = localStorage.getItem("token");
+            if (!token) {
+                alert("You must be logged in to edit your account.");
+                return;
+            }
 
+            const formData = new FormData(this);
+            const data = {
+                name: formData.get("name"),
+                email: formData.get("email"),
+                password: formData.get("password") || undefined
+            };
+
+            fetch(`/users`, {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json",
+                    authorization: token,
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => {
+                if (!response.ok) {
+                    return response.text().then(text => { throw new Error(text || "Network response was not ok"); });
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log("User updated:", data);
+                alert("Account successfully updated!");
+            })
+            .catch(error => {
+                console.error("There has been a problem with your fetch operation:", error);
+                alert(`Failed to update account: ${error.message}`);
+            });
+        });
+}

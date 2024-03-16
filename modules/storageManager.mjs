@@ -19,28 +19,42 @@ class DBManager {
     }
 
     async updateUser(user) {
-
         const client = new pg.Client(this.#credentials);
+
+        let newUser;
 
         try {
             await client.connect();
-            const output = await client.query('Update "public"."Users" set "name" = $1, "email" = $2, "password" = $3 where id = $4;', [user.name, user.email, user.pswHash, user.id]);
 
-            // Client.Query returns an object of type pg.Result (https://node-postgres.com/apis/result)
-            // Of special intrest is the rows and rowCount properties of this object.
+            const query = `
+                UPDATE "public"."Users"
+                SET "name" = $1, 
+                    "email" = $2,
+                    "password" = $3
+                WHERE "id" = $4
+                RETURNING *;`;
 
-            //TODO Did we update the user?
+            const params = [
+                user.name,
+                user.email,
+                user.pswHash,
+                user.id
+            ];
 
+            const output = await client.query(query, params);
+
+            if (output.rowCount === 0) {
+                throw new Error('User not found.');
+            }
+            newUser = output.rows[0];
         } catch (error) {
-            //TODO : Error handling??
-            SuperLogger.log('Update User failed: ' + error.message, SuperLogger.LOGGING_LEVELS.ERROR);
-
+            console.error('Error updating user:', error);
+            throw error;
         } finally {
-            client.end();
+            await client.end();
         }
 
-        return user;
-
+        return newUser;
     }
 
     async deleteUser(id) {
@@ -51,10 +65,9 @@ class DBManager {
 
         try {
             await client.connect();
-            output = await client.query('Delete from "public"."Users"  where id = $1;', [id]);
+            output = await client.query('Delete from "public"."Users" where id = $1;', [id]);
 
         } catch (error) {
-            //TODO : Error handling??
             SuperLogger.log('Deltete User Error: ' + error.message, SuperLogger.LOGGING_LEVELS.ERROR);
         } finally {
             client.end();
@@ -77,7 +90,6 @@ class DBManager {
 
         } catch (error) {
             console.error(error);
-            //TODO : Error handling??
             SuperLogger.log('Create User ERROR: ' + error.message, SuperLogger.LOGGING_LEVELS.ERROR);
         } finally {
             client.end();
@@ -97,7 +109,6 @@ class DBManager {
             user = output.rows[0];
         } catch (error) {
             console.error(error);
-            //TODO : Error handling??
             SuperLogger.log('Find User Error: ' + error.message, SuperLogger.LOGGING_LEVELS.ERROR);
         } finally {
             client.end();
@@ -116,7 +127,6 @@ class DBManager {
 
         } catch (error) {
             console.error(error);
-            //TODO : Error handling??
             SuperLogger.log('Create Cards Error: ' + error.message, SuperLogger.LOGGING_LEVELS.ERROR);
         } finally {
             client.end();
@@ -136,7 +146,6 @@ class DBManager {
 
         } catch (error) {
             console.error(error);
-            //TODO : Error handling??
             SuperLogger.log('Get Cards Error: ' + error.message, SuperLogger.LOGGING_LEVELS.ERROR);
         } finally {
             client.end();
@@ -157,7 +166,6 @@ class DBManager {
             card = output.rows;
         } catch (error) {
             console.error(error);
-            //TODO : Error handling??
             SuperLogger.log('Get Cards Error: ' + error.message, SuperLogger.LOGGING_LEVELS.ERROR);
         } finally {
             client.end();
@@ -165,5 +173,40 @@ class DBManager {
 
         return card;
     }
+
+    async findUserById(id) {
+        const client = new pg.Client(this.#credentials);
+
+        let user;
+
+        try {
+            await client.connect();
+            const output = await client.query('SELECT * FROM "public"."Users" WHERE "id" = $1;', [id]);
+
+            user = output.rows[0];
+        } catch (error) {
+            console.error(error);
+            SuperLogger.log('Get Cards Error: ' + error.message, SuperLogger.LOGGING_LEVELS.ERROR);
+        } finally {
+            client.end();
+        }
+
+        return user;
+    }
+
+    async deleteCard(cardId) {
+        const client = new pg.Client(this.#credentials);
+
+        try {
+            await client.connect();
+            const output = await client.query('Delete from "public"."Card" where "cardID" = $1;', [cardId]);
+
+        } catch (error) {
+            SuperLogger.log('Deltete User Error: ' + error.message, SuperLogger.LOGGING_LEVELS.ERROR);
+        } finally {
+            client.end();
+        }
+    }
+
 }
 export default new DBManager(process.env.DB_CONNECTIONSTRING);

@@ -12052,3 +12052,1082 @@ User logged in and token generated for: Test@mail.com
 15:23:44 [32mGET[39m /scripts/storageManager.mjs
 15:23:44 [32mGET[39m /assets/Que.png
 15:23:45 [32mGET[39m /cards/all
+19:25:22 [32mGET[39m /index.html
+19:25:22 [32mGET[39m /styles/style.css
+19:25:22 [32mGET[39m /scripts/main.mjs
+19:25:22 [32mGET[39m /scripts/signUp.mjs
+19:25:22 [32mGET[39m /scripts/createCards.mjs
+19:25:22 [32mGET[39m /scripts/cardOperations.mjs
+19:25:22 [32mGET[39m /assets/Que.png
+19:25:22 [32mGET[39m /scripts/login.mjs
+19:25:22 [32mGET[39m /scripts/storageManager.mjs
+19:25:22 [32mGET[39m /favicon.ico
+19:25:24 [32mGET[39m /cards/all
+19:25:27 [32mGET[39m /index.html
+19:25:27 [32mGET[39m /index.html
+19:25:27 [32mGET[39m /styles/style.css
+19:25:27 [32mGET[39m /scripts/main.mjs
+19:25:27 [32mGET[39m /scripts/signUp.mjs
+19:25:27 [32mGET[39m /scripts/createCards.mjs
+19:25:27 [32mGET[39m /scripts/cardOperations.mjs
+19:25:27 [32mGET[39m /scripts/login.mjs
+19:25:27 [32mGET[39m /scripts/storageManager.mjs
+19:25:27 [32mGET[39m /assets/Que.png
+19:25:30 [32mGET[39m /index.html
+19:25:30 [32mGET[39m /index.html
+19:25:30 [32mGET[39m /styles/style.css
+19:25:30 [32mGET[39m /scripts/main.mjs
+19:25:30 [32mGET[39m /scripts/signUp.mjs
+19:25:30 [32mGET[39m /scripts/createCards.mjs
+19:25:30 [32mGET[39m /scripts/cardOperations.mjs
+19:25:30 [32mGET[39m /scripts/login.mjs
+19:25:30 [32mGET[39m /scripts/storageManager.mjs
+19:25:30 [32mGET[39m /assets/Que.png
+20:28:52 [32mGET[39m /index.html
+20:28:52 [32mGET[39m /index.html
+20:28:52 [32mGET[39m /scripts/createCards.mjs
+20:28:52 [32mGET[39m /styles/style.css
+20:28:52 [32mGET[39m /assets/Que.png
+20:28:52 [32mGET[39m /scripts/main.mjs
+20:28:52 [32mGET[39m /scripts/signUp.mjs
+20:28:52 [32mGET[39m /scripts/cardOperations.mjs
+20:28:52 [32mGET[39m /scripts/login.mjs
+20:28:52 [32mGET[39m /scripts/storageManager.mjs
+20:28:52 [32mGET[39m /favicon.ico
+20:29:03 [32mGET[39m /index.html
+20:29:03 [32mGET[39m /index.html
+20:29:03 [32mGET[39m /styles/style.css
+20:29:03 [32mGET[39m /scripts/main.mjs
+20:29:03 [32mGET[39m /scripts/cardOperations.mjs
+20:29:03 [32mGET[39m /scripts/createCards.mjs
+20:29:03 [32mGET[39m /scripts/signUp.mjs
+20:29:03 [32mGET[39m /scripts/login.mjs
+20:29:03 [32mGET[39m /scripts/storageManager.mjs
+20:29:03 [32mGET[39m /assets/Que.png
+20:29:13 [31mDELETE[39m /users
+20:29:30 [33mPOST[39m /users/login
+Attempting login for user: Test@mail.com
+Hashed password for Test@mail.com: undefined
+Password match for Test@mail.com: true
+User logged in and token generated for: Test@mail.com
+20:29:31 [31mDELETE[39m /users
+20:32:50 [32mGET[39m /index.html
+20:32:51 [32mGET[39m /styles/style.css
+20:32:51 [32mGET[39m /scripts/main.mjs
+20:32:51 [32mGET[39m /scripts/signUp.mjs
+20:32:51 [32mGET[39m /scripts/createCards.mjs
+20:32:51 [32mGET[39m /scripts/cardOperations.mjs
+20:32:51 [32mGET[39m /scripts/login.mjs
+20:32:51 [32mGET[39m /scripts/storageManager.mjs
+20:32:51 [32mGET[39m /assets/Que.png
+20:32:54 [33mPOST[39m /users/login
+Attempting login for user: Test@mail.com
+Hashed password for Test@mail.com: undefined
+Password match for Test@mail.com: false
+20:32:57 [32mGET[39m /index.html
+20:32:57 [32mGET[39m /index.html
+20:32:57 [32mGET[39m /styles/style.css
+20:32:57 [32mGET[39m /scripts/main.mjs
+20:32:57 [32mGET[39m /scripts/signUp.mjs
+20:32:57 [32mGET[39m /scripts/createCards.mjs
+20:32:57 [32mGET[39m /scripts/cardOperations.mjs
+20:32:57 [32mGET[39m /scripts/login.mjs
+20:32:57 [32mGET[39m /scripts/storageManager.mjs
+20:32:57 [32mGET[39m /assets/Que.png
+20:33:00 [32mGET[39m /index.html
+20:33:00 [32mGET[39m /index.html
+20:33:00 [32mGET[39m /styles/style.css
+20:33:00 [32mGET[39m /scripts/main.mjs
+20:33:00 [32mGET[39m /scripts/signUp.mjs
+20:33:00 [32mGET[39m /scripts/createCards.mjs
+20:33:00 [32mGET[39m /scripts/cardOperations.mjs
+20:33:00 [32mGET[39m /scripts/login.mjs
+20:33:00 [32mGET[39m /scripts/storageManager.mjs
+20:33:00 [32mGET[39m /assets/Que.png
+20:33:07 [33mPOST[39m /users
+Created user: TestName  
+20:33:10 [32mGET[39m /index.html
+20:33:10 [32mGET[39m /index.html
+20:33:10 [32mGET[39m /styles/style.css
+20:33:10 [32mGET[39m /scripts/main.mjs
+20:33:10 [32mGET[39m /scripts/signUp.mjs
+20:33:10 [32mGET[39m /scripts/createCards.mjs
+20:33:10 [32mGET[39m /scripts/cardOperations.mjs
+20:33:10 [32mGET[39m /scripts/storageManager.mjs
+20:33:10 [32mGET[39m /scripts/login.mjs
+20:33:10 [32mGET[39m /assets/Que.png
+20:33:21 [32mGET[39m /index.html
+20:33:21 [32mGET[39m /index.html
+20:33:21 [32mGET[39m /styles/style.css
+20:33:21 [32mGET[39m /scripts/main.mjs
+20:33:21 [32mGET[39m /scripts/signUp.mjs
+20:33:21 [32mGET[39m /scripts/createCards.mjs
+20:33:21 [32mGET[39m /scripts/cardOperations.mjs
+20:33:21 [32mGET[39m /scripts/login.mjs
+20:33:21 [32mGET[39m /scripts/storageManager.mjs
+20:33:21 [32mGET[39m /assets/Que.png
+20:33:26 [32mGET[39m /index.html
+20:33:26 [32mGET[39m /index.html
+20:33:26 [32mGET[39m /styles/style.css
+20:33:26 [32mGET[39m /scripts/main.mjs
+20:33:26 [32mGET[39m /scripts/signUp.mjs
+20:33:26 [32mGET[39m /scripts/createCards.mjs
+20:33:26 [32mGET[39m /scripts/cardOperations.mjs
+20:33:26 [32mGET[39m /scripts/storageManager.mjs
+20:33:26 [32mGET[39m /scripts/login.mjs
+20:33:26 [32mGET[39m /assets/Que.png
+20:39:12 [32mGET[39m /index.html
+20:39:12 [32mGET[39m /styles/style.css
+20:39:12 [32mGET[39m /scripts/main.mjs
+20:39:12 [32mGET[39m /scripts/createCards.mjs
+20:39:12 [32mGET[39m /scripts/signUp.mjs
+20:39:12 [32mGET[39m /scripts/cardOperations.mjs
+20:39:12 [32mGET[39m /scripts/login.mjs
+20:39:12 [32mGET[39m /scripts/storageManager.mjs
+20:39:12 [32mGET[39m /assets/Que.png
+20:39:17 [33mPOST[39m /users/login
+Attempting login for user: Test@mail.com
+Hashed password for Test@mail.com: undefined
+Password match for Test@mail.com: false
+20:39:20 [32mGET[39m /index.html
+20:39:20 [32mGET[39m /index.html
+20:39:20 [32mGET[39m /styles/style.css
+20:39:20 [32mGET[39m /scripts/main.mjs
+20:39:20 [32mGET[39m /scripts/signUp.mjs
+20:39:20 [32mGET[39m /scripts/createCards.mjs
+20:39:20 [32mGET[39m /scripts/cardOperations.mjs
+20:39:20 [32mGET[39m /scripts/storageManager.mjs
+20:39:20 [32mGET[39m /scripts/login.mjs
+20:39:20 [32mGET[39m /assets/Que.png
+20:39:33 [32mGET[39m /index.html
+20:39:33 [32mGET[39m /index.html
+20:39:33 [32mGET[39m /styles/style.css
+20:39:33 [32mGET[39m /scripts/main.mjs
+20:39:33 [32mGET[39m /scripts/signUp.mjs
+20:39:33 [32mGET[39m /scripts/createCards.mjs
+20:39:33 [32mGET[39m /scripts/cardOperations.mjs
+20:39:33 [32mGET[39m /scripts/login.mjs
+20:39:33 [32mGET[39m /scripts/storageManager.mjs
+20:39:33 [32mGET[39m /assets/Que.png
+20:39:43 [33mPOST[39m /users
+Created user: TestName  
+20:39:49 [32mGET[39m /index.html
+20:39:49 [32mGET[39m /index.html
+20:39:49 [32mGET[39m /styles/style.css
+20:39:49 [32mGET[39m /scripts/main.mjs
+20:39:49 [32mGET[39m /scripts/signUp.mjs
+20:39:49 [32mGET[39m /scripts/createCards.mjs
+20:39:49 [32mGET[39m /scripts/cardOperations.mjs
+20:39:49 [32mGET[39m /scripts/storageManager.mjs
+20:39:49 [32mGET[39m /scripts/login.mjs
+20:39:49 [32mGET[39m /assets/Que.png
+20:39:54 [33mPOST[39m /users/login
+Attempting login for user: Test@mail.com
+Hashed password for Test@mail.com: undefined
+Password match for Test@mail.com: true
+User logged in and token generated for: Test@mail.com
+20:41:21 [32mGET[39m /index.html
+20:41:22 [32mGET[39m /styles/style.css
+20:41:22 [32mGET[39m /scripts/main.mjs
+20:41:22 [32mGET[39m /scripts/signUp.mjs
+20:41:22 [32mGET[39m /scripts/createCards.mjs
+20:41:22 [32mGET[39m /scripts/cardOperations.mjs
+20:41:22 [32mGET[39m /scripts/login.mjs
+20:41:22 [32mGET[39m /scripts/storageManager.mjs
+20:41:22 [32mGET[39m /assets/Que.png
+20:42:51 [32mGET[39m /index.html
+20:42:51 [32mGET[39m /index.html
+20:42:51 [32mGET[39m /styles/style.css
+20:42:51 [32mGET[39m /scripts/main.mjs
+20:42:51 [32mGET[39m /scripts/signUp.mjs
+20:42:52 [32mGET[39m /scripts/createCards.mjs
+20:42:52 [32mGET[39m /scripts/cardOperations.mjs
+20:42:52 [32mGET[39m /scripts/storageManager.mjs
+20:42:54 [32mGET[39m /index.html
+20:42:54 [32mGET[39m /index.html
+20:42:54 [32mGET[39m /styles/style.css
+20:42:54 [32mGET[39m /scripts/main.mjs
+20:42:54 [32mGET[39m /scripts/signUp.mjs
+20:42:54 [32mGET[39m /scripts/createCards.mjs
+20:42:54 [32mGET[39m /scripts/cardOperations.mjs
+20:42:54 [32mGET[39m /scripts/storageManager.mjs
+20:43:05 [32mGET[39m /index.html
+20:43:05 [32mGET[39m /index.html
+20:43:05 [32mGET[39m /styles/style.css
+20:43:05 [32mGET[39m /scripts/main.mjs
+20:43:05 [32mGET[39m /scripts/signUp.mjs
+20:43:05 [32mGET[39m /scripts/createCards.mjs
+20:43:05 [32mGET[39m /scripts/cardOperations.mjs
+20:43:05 [32mGET[39m /scripts/login.mjs
+20:43:05 [32mGET[39m /scripts/storageManager.mjs
+20:43:05 [32mGET[39m /assets/Que.png
+20:43:16 [32mGET[39m /index.html
+20:43:16 [32mGET[39m /styles/style.css
+20:43:16 [32mGET[39m /scripts/main.mjs
+20:43:16 [32mGET[39m /scripts/signUp.mjs
+20:43:16 [32mGET[39m /scripts/createCards.mjs
+20:43:16 [32mGET[39m /scripts/cardOperations.mjs
+20:43:16 [32mGET[39m /scripts/login.mjs
+20:43:16 [32mGET[39m /scripts/storageManager.mjs
+20:43:16 [32mGET[39m /assets/Que.png
+20:43:23 [33mPOST[39m /users/login
+Attempting login for user: Test@mail.com
+Hashed password for Test@mail.com: undefined
+Password match for Test@mail.com: true
+User logged in and token generated for: Test@mail.com
+20:57:37 [32mGET[39m /index.html
+20:57:37 [32mGET[39m /index.html
+20:57:37 [32mGET[39m /scripts/createCards.mjs
+20:57:37 [32mGET[39m /styles/style.css
+20:57:37 [32mGET[39m /scripts/main.mjs
+20:57:37 [32mGET[39m /scripts/cardOperations.mjs
+20:57:37 [32mGET[39m /scripts/signUp.mjs
+20:57:37 [32mGET[39m /scripts/storageManager.mjs
+20:57:37 [32mGET[39m /scripts/login.mjs
+20:57:37 [32mGET[39m /assets/Que.png
+20:57:42 [33mPOST[39m /users/login
+Attempting login for user: Test@mail.com
+Hashed password for Test@mail.com: undefined
+Password match for Test@mail.com: true
+User logged in and token generated for: Test@mail.com
+21:00:18 [32mGET[39m /index.html
+21:00:18 [32mGET[39m /index.html
+21:00:18 [32mGET[39m /styles/style.css
+21:00:18 [32mGET[39m /assets/Que.png
+21:00:18 [32mGET[39m /scripts/main.mjs
+21:00:18 [32mGET[39m /scripts/signUp.mjs
+21:00:18 [32mGET[39m /scripts/createCards.mjs
+21:00:18 [32mGET[39m /scripts/cardOperations.mjs
+21:00:18 [32mGET[39m /scripts/login.mjs
+21:00:18 [32mGET[39m /scripts/storageManager.mjs
+21:00:21 [33mPOST[39m /users/login
+Attempting login for user: Test@mail.com
+Hashed password for Test@mail.com: undefined
+Password match for Test@mail.com: true
+User logged in and token generated for: Test@mail.com
+21:05:50 [32mGET[39m /index.html
+21:05:50 [32mGET[39m /styles/style.css
+21:05:50 [32mGET[39m /scripts/main.mjs
+21:05:50 [32mGET[39m /assets/Que.png
+21:05:50 [32mGET[39m /scripts/signUp.mjs
+21:05:50 [32mGET[39m /scripts/createCards.mjs
+21:05:50 [32mGET[39m /scripts/cardOperations.mjs
+21:05:50 [32mGET[39m /scripts/login.mjs
+21:05:50 [32mGET[39m /scripts/storageManager.mjs
+21:05:54 [33mPOST[39m /users/login
+Attempting login for user: Test@mail.com
+Hashed password for Test@mail.com: undefined
+Password match for Test@mail.com: true
+User logged in and token generated for: Test@mail.com
+21:06:01 [32mGET[39m /index.html
+21:06:01 [32mGET[39m /index.html
+21:06:02 [32mGET[39m /styles/style.css
+21:06:02 [32mGET[39m /scripts/createCards.mjs
+21:06:02 [32mGET[39m /scripts/cardOperations.mjs
+21:06:02 [32mGET[39m /scripts/main.mjs
+21:06:02 [32mGET[39m /scripts/signUp.mjs
+21:06:02 [32mGET[39m /scripts/storageManager.mjs
+21:06:02 [32mGET[39m /scripts/login.mjs
+21:06:02 [32mGET[39m /assets/Que.png
+21:06:05 [33mPOST[39m /users/login
+Attempting login for user: Test@mail.com
+Hashed password for Test@mail.com: undefined
+Password match for Test@mail.com: true
+User logged in and token generated for: Test@mail.com
+21:10:21 [32mGET[39m /index.html
+21:10:21 [32mGET[39m /index.html
+21:10:21 [32mGET[39m /scripts/signUp.mjs
+21:10:21 [32mGET[39m /scripts/createCards.mjs
+21:10:21 [32mGET[39m /scripts/cardOperations.mjs
+21:10:21 [32mGET[39m /styles/style.css
+21:10:21 [32mGET[39m /scripts/main.mjs
+21:10:21 [32mGET[39m /scripts/login.mjs
+21:10:21 [32mGET[39m /scripts/storageManager.mjs
+21:10:21 [32mGET[39m /assets/Que.png
+21:10:43 [32mGET[39m /index.html
+21:10:43 [32mGET[39m /index.html
+21:10:43 [32mGET[39m /styles/style.css
+21:10:43 [32mGET[39m /scripts/main.mjs
+21:10:43 [32mGET[39m /scripts/signUp.mjs
+21:10:43 [32mGET[39m /scripts/createCards.mjs
+21:10:43 [32mGET[39m /scripts/cardOperations.mjs
+21:10:43 [32mGET[39m /scripts/login.mjs
+21:10:43 [32mGET[39m /scripts/storageManager.mjs
+21:10:43 [32mGET[39m /assets/Que.png
+21:11:04 [32mGET[39m /index.html
+21:11:04 [32mGET[39m /index.html
+21:11:04 [32mGET[39m /styles/style.css
+21:11:04 [32mGET[39m /scripts/main.mjs
+21:11:04 [32mGET[39m /scripts/signUp.mjs
+21:11:04 [32mGET[39m /scripts/createCards.mjs
+21:11:04 [32mGET[39m /scripts/cardOperations.mjs
+21:11:04 [32mGET[39m /scripts/login.mjs
+21:11:04 [32mGET[39m /scripts/storageManager.mjs
+21:11:04 [32mGET[39m /assets/Que.png
+21:11:09 [33mPOST[39m /users/login
+Attempting login for user: Test@mail.com
+Hashed password for Test@mail.com: undefined
+Password match for Test@mail.com: true
+User logged in and token generated for: Test@mail.com
+21:11:53 [32mGET[39m /index.html
+21:11:54 [32mGET[39m /index.html
+21:11:54 [32mGET[39m /styles/style.css
+21:11:54 [32mGET[39m /scripts/main.mjs
+21:11:54 [32mGET[39m /scripts/signUp.mjs
+21:11:54 [32mGET[39m /scripts/createCards.mjs
+21:11:54 [32mGET[39m /scripts/cardOperations.mjs
+21:11:54 [32mGET[39m /scripts/login.mjs
+21:11:54 [32mGET[39m /scripts/storageManager.mjs
+21:11:54 [32mGET[39m /assets/Que.png
+21:12:06 [33mPOST[39m /users/login
+Attempting login for user: Test@mail.com
+Hashed password for Test@mail.com: undefined
+User logged in and token generated for: Test@mail.com
+Password match for Test@mail.com: true
+21:23:57 [32mGET[39m /index.html
+21:23:58 [32mGET[39m /index.html
+21:23:58 [32mGET[39m /styles/style.css
+21:23:58 [32mGET[39m /scripts/main.mjs
+21:23:58 [32mGET[39m /scripts/createCards.mjs
+21:23:58 [32mGET[39m /scripts/signUp.mjs
+21:23:58 [32mGET[39m /scripts/cardOperations.mjs
+21:23:58 [32mGET[39m /scripts/login.mjs
+21:23:58 [32mGET[39m /scripts/storageManager.mjs
+21:23:58 [32mGET[39m /assets/Que.png
+21:24:01 [33mPOST[39m /users/login
+Attempting login for user: Test@mail.com
+Hashed password for Test@mail.com: undefined
+Password match for Test@mail.com: true
+User logged in and token generated for: Test@mail.com
+21:28:56 [32mGET[39m /index.html
+21:28:56 [32mGET[39m /styles/style.css
+21:28:56 [32mGET[39m /scripts/main.mjs
+21:28:56 [32mGET[39m /scripts/signUp.mjs
+21:28:56 [32mGET[39m /scripts/createCards.mjs
+21:28:56 [32mGET[39m /scripts/cardOperations.mjs
+21:28:56 [32mGET[39m /assets/Que.png
+21:28:56 [32mGET[39m /scripts/login.mjs
+21:28:56 [32mGET[39m /scripts/storageManager.mjs
+21:28:56 [32mGET[39m /favicon.ico
+21:28:56 [32mGET[39m /favicon.ico
+21:28:59 [32mGET[39m /index.html
+21:28:59 [32mGET[39m /styles/style.css
+21:28:59 [32mGET[39m /scripts/main.mjs
+21:28:59 [32mGET[39m /scripts/signUp.mjs
+21:28:59 [32mGET[39m /index.html
+21:28:59 [32mGET[39m /scripts/createCards.mjs
+21:28:59 [32mGET[39m /scripts/cardOperations.mjs
+21:28:59 [32mGET[39m /scripts/login.mjs
+21:28:59 [32mGET[39m /scripts/storageManager.mjs
+21:28:59 [32mGET[39m /assets/Que.png
+21:29:02 [32mGET[39m /index.html
+21:29:02 [32mGET[39m /index.html
+21:29:02 [32mGET[39m /styles/style.css
+21:29:02 [32mGET[39m /scripts/main.mjs
+21:29:02 [32mGET[39m /scripts/signUp.mjs
+21:29:02 [32mGET[39m /scripts/cardOperations.mjs
+21:29:02 [32mGET[39m /scripts/createCards.mjs
+21:29:02 [32mGET[39m /scripts/login.mjs
+21:29:02 [32mGET[39m /scripts/storageManager.mjs
+21:29:02 [32mGET[39m /assets/Que.png
+21:29:04 [32mGET[39m /index.html
+21:29:04 [32mGET[39m /index.html
+21:29:04 [32mGET[39m /styles/style.css
+21:29:04 [32mGET[39m /scripts/main.mjs
+21:29:04 [32mGET[39m /scripts/signUp.mjs
+21:29:04 [32mGET[39m /scripts/createCards.mjs
+21:29:04 [32mGET[39m /scripts/cardOperations.mjs
+21:29:04 [32mGET[39m /scripts/login.mjs
+21:29:04 [32mGET[39m /scripts/storageManager.mjs
+21:29:04 [32mGET[39m /assets/Que.png
+21:29:06 [32mGET[39m /cards/all
+21:29:07 [32mGET[39m /cards/null
+Get Cards Error: invalid input syntax for type integer: "null"
+21:29:09 [32mGET[39m /index.html
+21:29:09 [32mGET[39m /index.html
+21:29:09 [32mGET[39m /styles/style.css
+21:29:09 [32mGET[39m /scripts/main.mjs
+21:29:09 [32mGET[39m /scripts/signUp.mjs
+21:29:09 [32mGET[39m /scripts/createCards.mjs
+21:29:09 [32mGET[39m /scripts/cardOperations.mjs
+21:29:10 [32mGET[39m /scripts/storageManager.mjs
+21:29:10 [32mGET[39m /scripts/login.mjs
+21:29:10 [32mGET[39m /assets/Que.png
+21:29:11 [32mGET[39m /cards/all
+21:29:12 [32mGET[39m /cards/1
+21:29:18 [32mGET[39m /index.html
+21:29:18 [32mGET[39m /index.html
+21:29:18 [32mGET[39m /styles/style.css
+21:29:18 [32mGET[39m /scripts/main.mjs
+21:29:18 [32mGET[39m /scripts/signUp.mjs
+21:29:18 [32mGET[39m /scripts/createCards.mjs
+21:29:18 [32mGET[39m /scripts/cardOperations.mjs
+21:29:18 [32mGET[39m /scripts/login.mjs
+21:29:18 [32mGET[39m /scripts/storageManager.mjs
+21:29:19 [32mGET[39m /assets/Que.png
+10:25:29 [32mGET[39m /index.html
+10:25:33 [32mGET[39m /index.html
+10:25:33 [32mGET[39m /index.html
+10:25:33 [32mGET[39m /styles/style.css
+10:25:33 [32mGET[39m /scripts/createCards.mjs
+10:25:33 [32mGET[39m /scripts/main.mjs
+10:25:33 [32mGET[39m /scripts/signUp.mjs
+10:25:33 [32mGET[39m /scripts/cardOperations.mjs
+10:25:33 [32mGET[39m /assets/Que.png
+10:25:33 [32mGET[39m /scripts/storageManager.mjs
+10:25:33 [32mGET[39m /scripts/login.mjs
+10:25:33 [32mGET[39m /favicon.ico
+10:35:05 [32mGET[39m /index.html
+10:35:05 [32mGET[39m /index.html
+10:35:05 [32mGET[39m /scripts/createCards.mjs
+10:35:05 [32mGET[39m /styles/style.css
+10:35:05 [32mGET[39m /scripts/main.mjs
+10:35:05 [32mGET[39m /scripts/signUp.mjs
+10:35:05 [32mGET[39m /scripts/cardOperations.mjs
+10:35:05 [32mGET[39m /scripts/storageManager.mjs
+10:35:05 [32mGET[39m /scripts/login.mjs
+10:35:05 [32mGET[39m /assets/Que.png
+10:35:05 [32mGET[39m /favicon.ico
+10:35:11 [32mGET[39m /index.html
+10:35:11 [32mGET[39m /index.html
+10:35:11 [32mGET[39m /styles/style.css
+10:35:11 [32mGET[39m /scripts/main.mjs
+10:35:11 [32mGET[39m /scripts/signUp.mjs
+10:35:11 [32mGET[39m /scripts/createCards.mjs
+10:35:11 [32mGET[39m /scripts/cardOperations.mjs
+10:35:11 [32mGET[39m /scripts/login.mjs
+10:35:11 [32mGET[39m /scripts/storageManager.mjs
+10:35:11 [32mGET[39m /assets/Que.png
+10:35:15 [33mPOST[39m /users/login
+Attempting login for user: Test@mail.com
+Hashed password for Test@mail.com: undefined
+Password match for Test@mail.com: true
+User logged in and token generated for: Test@mail.com
+10:39:45 [32mGET[39m /index.html
+10:39:45 [32mGET[39m /scripts/createCards.mjs
+10:39:45 [32mGET[39m /styles/style.css
+10:39:45 [32mGET[39m /scripts/main.mjs
+10:39:45 [32mGET[39m /scripts/cardOperations.mjs
+10:39:45 [32mGET[39m /scripts/signUp.mjs
+10:39:45 [32mGET[39m /scripts/storageManager.mjs
+10:39:45 [32mGET[39m /scripts/login.mjs
+10:39:45 [32mGET[39m /assets/Que.png
+10:40:41 [32mGET[39m /index.html
+10:40:42 [32mGET[39m /styles/style.css
+10:40:42 [32mGET[39m /scripts/main.mjs
+10:40:42 [32mGET[39m /scripts/signUp.mjs
+10:40:42 [32mGET[39m /scripts/createCards.mjs
+10:40:42 [32mGET[39m /scripts/cardOperations.mjs
+10:40:42 [32mGET[39m /scripts/login.mjs
+10:40:42 [32mGET[39m /scripts/storageManager.mjs
+10:40:42 [32mGET[39m /assets/Que.png
+10:40:47 [33mPOST[39m /users/login
+Attempting login for user: Test@mail.com
+Hashed password for Test@mail.com: undefined
+Password match for Test@mail.com: true
+User logged in and token generated for: Test@mail.com
+10:40:49 [33mPOST[39m /users/login
+10:40:58 [33mPOST[39m /users/login
+Attempting login for user: Test@mail.com
+Hashed password for Test@mail.com: undefined
+Password match for Test@mail.com: true
+User logged in and token generated for: Test@mail.com
+10:41:08 [33mPOST[39m /users/login
+Attempting login for user: Test@mail.com
+Hashed password for Test@mail.com: undefined
+Password match for Test@mail.com: false
+10:41:34 [33mPOST[39m /users/login
+Attempting login for user: Test@mail.com
+Hashed password for Test@mail.com: undefined
+Password match for Test@mail.com: false
+10:41:36 [33mPOST[39m /users/login
+Attempting login for user: Test@mail.com
+Hashed password for Test@mail.com: undefined
+Password match for Test@mail.com: false
+10:41:40 [33mPOST[39m /users/login
+Attempting login for user: Test@mail.com
+Hashed password for Test@mail.com: undefined
+Password match for Test@mail.com: true
+User logged in and token generated for: Test@mail.com
+10:41:41 [33mPOST[39m /users/login
+Attempting login for user: Test@mail.com
+Hashed password for Test@mail.com: undefined
+Password match for Test@mail.com: true
+User logged in and token generated for: Test@mail.com
+10:41:42 [31mDELETE[39m /users
+10:41:42 [31mDELETE[39m /users
+10:41:42 [33mPOST[39m /users/login
+10:41:44 [33mPOST[39m /users/login
+10:41:57 [33mPOST[39m /users/login
+10:42:01 [31mDELETE[39m /users
+10:42:09 [32mGET[39m /index.html
+10:42:10 [32mGET[39m /index.html
+10:42:10 [32mGET[39m /styles/style.css
+10:42:10 [32mGET[39m /scripts/main.mjs
+10:42:10 [32mGET[39m /scripts/signUp.mjs
+10:42:10 [32mGET[39m /scripts/createCards.mjs
+10:42:10 [32mGET[39m /scripts/cardOperations.mjs
+10:42:10 [32mGET[39m /scripts/login.mjs
+10:42:10 [32mGET[39m /scripts/storageManager.mjs
+10:42:10 [32mGET[39m /assets/Que.png
+10:42:13 [33mPOST[39m /users/login
+10:42:15 [32mGET[39m /index.html
+10:42:16 [32mGET[39m /index.html
+10:42:16 [32mGET[39m /styles/style.css
+10:42:16 [32mGET[39m /scripts/main.mjs
+10:42:16 [32mGET[39m /scripts/signUp.mjs
+10:42:16 [32mGET[39m /scripts/createCards.mjs
+10:42:16 [32mGET[39m /scripts/cardOperations.mjs
+10:42:16 [32mGET[39m /scripts/login.mjs
+10:42:16 [32mGET[39m /scripts/storageManager.mjs
+10:42:16 [32mGET[39m /assets/Que.png
+10:42:22 [33mPOST[39m /users
+Created user: TestName  
+10:42:35 [32mGET[39m /index.html
+10:42:35 [32mGET[39m /index.html
+10:42:35 [32mGET[39m /styles/style.css
+10:42:35 [32mGET[39m /scripts/main.mjs
+10:42:35 [32mGET[39m /scripts/signUp.mjs
+10:42:35 [32mGET[39m /scripts/createCards.mjs
+10:42:35 [32mGET[39m /scripts/cardOperations.mjs
+10:42:35 [32mGET[39m /scripts/login.mjs
+10:42:35 [32mGET[39m /scripts/storageManager.mjs
+10:42:35 [32mGET[39m /assets/Que.png
+10:43:49 [33mPOST[39m /users/login
+Attempting login for user: Test@mail.com
+Hashed password for Test@mail.com: undefined
+Password match for Test@mail.com: true
+User logged in and token generated for: Test@mail.com
+10:51:57 [33mPOST[39m /users/login
+Attempting login for user: Test@mail.com
+Hashed password for Test@mail.com: undefined
+Password match for Test@mail.com: true
+User logged in and token generated for: Test@mail.com
+11:10:24 [32mGET[39m /index.html
+11:10:24 [32mGET[39m /scripts/createCards.mjs
+11:10:24 [32mGET[39m /styles/style.css
+11:10:24 [32mGET[39m /scripts/signUp.mjs
+11:10:24 [32mGET[39m /scripts/main.mjs
+11:10:24 [32mGET[39m /scripts/cardOperations.mjs
+11:10:24 [32mGET[39m /scripts/storageManager.mjs
+11:10:24 [32mGET[39m /scripts/login.mjs
+11:10:24 [32mGET[39m /assets/Que.png
+11:10:24 [32mGET[39m /favicon.ico
+11:13:10 [32mGET[39m /index.html
+11:13:11 [32mGET[39m /index.html
+11:13:11 [32mGET[39m /styles/style.css
+11:13:11 [32mGET[39m /scripts/main.mjs
+11:13:11 [32mGET[39m /scripts/signUp.mjs
+11:13:11 [32mGET[39m /scripts/createCards.mjs
+11:13:11 [32mGET[39m /scripts/cardOperations.mjs
+11:13:11 [32mGET[39m /assets/Que.png
+11:13:11 [32mGET[39m /scripts/login.mjs
+11:13:11 [32mGET[39m /scripts/storageManager.mjs
+11:13:32 [32mGET[39m /index.html
+11:13:32 [32mGET[39m /index.html
+11:13:32 [32mGET[39m /styles/style.css
+11:13:32 [32mGET[39m /scripts/main.mjs
+11:13:32 [32mGET[39m /scripts/signUp.mjs
+11:13:32 [32mGET[39m /scripts/createCards.mjs
+11:13:32 [32mGET[39m /scripts/cardOperations.mjs
+11:13:32 [32mGET[39m /scripts/login.mjs
+11:13:32 [32mGET[39m /scripts/storageManager.mjs
+11:13:32 [32mGET[39m /assets/Que.png
+11:13:51 [32mGET[39m /index.html
+11:13:51 [32mGET[39m /index.html
+11:13:51 [32mGET[39m /styles/style.css
+11:13:51 [32mGET[39m /scripts/main.mjs
+11:13:51 [32mGET[39m /scripts/signUp.mjs
+11:13:51 [32mGET[39m /scripts/createCards.mjs
+11:13:51 [32mGET[39m /scripts/cardOperations.mjs
+11:13:51 [32mGET[39m /scripts/login.mjs
+11:13:51 [32mGET[39m /scripts/storageManager.mjs
+11:13:51 [32mGET[39m /assets/Que.png
+11:15:38 [32mGET[39m /index.html
+11:15:39 [32mGET[39m /index.html
+11:15:39 [32mGET[39m /styles/style.css
+11:15:39 [32mGET[39m /scripts/main.mjs
+11:15:39 [32mGET[39m /scripts/signUp.mjs
+11:15:39 [32mGET[39m /scripts/createCards.mjs
+11:15:39 [32mGET[39m /scripts/cardOperations.mjs
+11:15:39 [32mGET[39m /scripts/login.mjs
+11:15:39 [32mGET[39m /scripts/storageManager.mjs
+11:15:39 [32mGET[39m /assets/Que.png
+11:17:27 [32mGET[39m /index.html
+11:17:27 [32mGET[39m /index.html
+11:17:27 [32mGET[39m /styles/style.css
+11:17:27 [32mGET[39m /scripts/signUp.mjs
+11:17:27 [32mGET[39m /scripts/main.mjs
+11:17:27 [32mGET[39m /scripts/createCards.mjs
+11:17:27 [32mGET[39m /scripts/cardOperations.mjs
+11:17:27 [32mGET[39m /scripts/login.mjs
+11:17:27 [32mGET[39m /scripts/storageManager.mjs
+11:17:27 [32mGET[39m /assets/Que.png
+11:18:06 [32mGET[39m /index.html
+11:18:06 [32mGET[39m /styles/style.css
+11:18:06 [32mGET[39m /scripts/main.mjs
+11:18:06 [32mGET[39m /scripts/signUp.mjs
+11:18:06 [32mGET[39m /scripts/createCards.mjs
+11:18:06 [32mGET[39m /scripts/cardOperations.mjs
+11:18:06 [32mGET[39m /scripts/login.mjs
+11:18:06 [32mGET[39m /scripts/storageManager.mjs
+11:18:07 [32mGET[39m /assets/Que.png
+11:18:18 [32mGET[39m /index.html
+11:18:18 [32mGET[39m /styles/style.css
+11:18:18 [32mGET[39m /scripts/main.mjs
+11:18:18 [32mGET[39m /scripts/signUp.mjs
+11:18:18 [32mGET[39m /scripts/createCards.mjs
+11:18:18 [32mGET[39m /scripts/cardOperations.mjs
+11:18:18 [32mGET[39m /scripts/login.mjs
+11:18:18 [32mGET[39m /scripts/storageManager.mjs
+11:18:18 [32mGET[39m /assets/Que.png
+11:21:37 [32mGET[39m /index.html
+11:21:37 [32mGET[39m /index.html
+11:21:37 [32mGET[39m /styles/style.css
+11:21:37 [32mGET[39m /scripts/main.mjs
+11:21:37 [32mGET[39m /scripts/signUp.mjs
+11:21:37 [32mGET[39m /scripts/createCards.mjs
+11:21:37 [32mGET[39m /scripts/cardOperations.mjs
+11:21:37 [32mGET[39m /scripts/login.mjs
+11:21:37 [32mGET[39m /scripts/storageManager.mjs
+11:21:37 [32mGET[39m /assets/Que.png
+11:21:44 [32mGET[39m /index.html?name=TestName++&email=Test%40mail.com&password=123123
+11:21:44 [32mGET[39m /styles/style.css
+11:21:44 [32mGET[39m /scripts/main.mjs
+11:21:44 [32mGET[39m /scripts/signUp.mjs
+11:21:44 [32mGET[39m /scripts/createCards.mjs
+11:21:44 [32mGET[39m /scripts/cardOperations.mjs
+11:21:44 [32mGET[39m /scripts/storageManager.mjs
+11:21:44 [32mGET[39m /scripts/login.mjs
+11:21:44 [32mGET[39m /assets/Que.png
+11:47:08 [32mGET[39m /index.html?name=TestName++&email=Test%40mail.com&password=123123
+11:47:08 [32mGET[39m /index.html?name=TestName++&email=Test%40mail.com&password=123123
+11:47:08 [32mGET[39m /scripts/createCards.mjs
+11:47:08 [32mGET[39m /styles/style.css
+11:47:08 [32mGET[39m /scripts/main.mjs
+11:47:08 [32mGET[39m /scripts/signUp.mjs
+11:47:08 [32mGET[39m /scripts/cardOperations.mjs
+11:47:09 [32mGET[39m /scripts/storageManager.mjs
+11:47:09 [32mGET[39m /scripts/login.mjs
+11:47:09 [32mGET[39m /assets/Que.png
+17:10:30 [32mGET[39m /index.html
+17:10:30 [32mGET[39m /styles/style.css
+17:10:30 [32mGET[39m /scripts/main.mjs
+17:10:30 [32mGET[39m /scripts/signUp.mjs
+17:10:30 [32mGET[39m /scripts/createCards.mjs
+17:10:30 [32mGET[39m /scripts/cardOperations.mjs
+17:10:30 [32mGET[39m /assets/Que.png
+17:10:30 [32mGET[39m /scripts/storageManager.mjs
+17:10:30 [32mGET[39m /scripts/login.mjs
+17:10:30 [32mGET[39m /favicon.ico
+17:10:42 [33mPOST[39m /users/login
+Attempting login for user: Test@mail.com
+Hashed password for Test@mail.com: undefined
+Password match for Test@mail.com: true
+User logged in and token generated for: Test@mail.com
+17:11:05 [32mGET[39m /index.html
+17:11:05 [32mGET[39m /index.html
+17:11:05 [32mGET[39m /styles/style.css
+17:11:05 [32mGET[39m /scripts/main.mjs
+17:11:05 [32mGET[39m /scripts/signUp.mjs
+17:11:05 [32mGET[39m /scripts/createCards.mjs
+17:11:05 [32mGET[39m /scripts/cardOperations.mjs
+17:11:06 [32mGET[39m /scripts/storageManager.mjs
+17:11:06 [32mGET[39m /scripts/login.mjs
+17:11:06 [32mGET[39m /assets/Que.png
+17:11:09 [33mPOST[39m /users/login
+Attempting login for user: Test@mail.com
+Hashed password for Test@mail.com: undefined
+Password match for Test@mail.com: true
+User logged in and token generated for: Test@mail.com
+17:11:53 [32mGET[39m /index.html
+17:11:54 [32mGET[39m /index.html
+17:11:54 [32mGET[39m /styles/style.css
+17:11:54 [32mGET[39m /scripts/main.mjs
+17:11:54 [32mGET[39m /scripts/cardOperations.mjs
+17:11:54 [32mGET[39m /scripts/signUp.mjs
+17:11:54 [32mGET[39m /scripts/createCards.mjs
+17:11:54 [32mGET[39m /scripts/storageManager.mjs
+17:11:54 [32mGET[39m /scripts/login.mjs
+17:11:54 [32mGET[39m /assets/Que.png
+17:11:56 [32mGET[39m /index.html
+17:11:56 [32mGET[39m /index.html
+17:11:56 [32mGET[39m /styles/style.css
+17:11:56 [32mGET[39m /scripts/main.mjs
+17:11:56 [32mGET[39m /scripts/signUp.mjs
+17:11:56 [32mGET[39m /scripts/createCards.mjs
+17:11:56 [32mGET[39m /scripts/cardOperations.mjs
+17:11:56 [32mGET[39m /scripts/login.mjs
+17:11:56 [32mGET[39m /scripts/storageManager.mjs
+17:11:56 [32mGET[39m /assets/Que.png
+17:11:58 [32mGET[39m /cards/all
+17:11:59 [32mGET[39m /cards/null
+Get Cards Error: invalid input syntax for type integer: "null"
+17:12:05 [32mGET[39m /index.html
+17:12:05 [32mGET[39m /index.html
+17:12:05 [32mGET[39m /styles/style.css
+17:12:05 [32mGET[39m /scripts/main.mjs
+17:12:05 [32mGET[39m /scripts/signUp.mjs
+17:12:05 [32mGET[39m /scripts/createCards.mjs
+17:12:05 [32mGET[39m /scripts/cardOperations.mjs
+17:12:05 [32mGET[39m /scripts/storageManager.mjs
+17:12:05 [32mGET[39m /scripts/login.mjs
+17:12:05 [32mGET[39m /assets/Que.png
+17:12:06 [32mGET[39m /cards/all
+17:12:07 [32mGET[39m /cards/1
+17:12:15 [32mGET[39m /index.html
+17:12:15 [32mGET[39m /index.html
+17:12:15 [32mGET[39m /styles/style.css
+17:12:15 [32mGET[39m /scripts/main.mjs
+17:12:15 [32mGET[39m /scripts/signUp.mjs
+17:12:15 [32mGET[39m /scripts/createCards.mjs
+17:12:15 [32mGET[39m /scripts/cardOperations.mjs
+17:12:15 [32mGET[39m /scripts/storageManager.mjs
+17:12:15 [32mGET[39m /scripts/login.mjs
+17:12:15 [32mGET[39m /assets/Que.png
+17:36:23 [32mGET[39m /index.html
+17:36:23 [32mGET[39m /styles/style.css
+17:36:23 [32mGET[39m /scripts/main.mjs
+17:36:23 [32mGET[39m /scripts/createCards.mjs
+17:36:23 [32mGET[39m /scripts/signUp.mjs
+17:36:23 [32mGET[39m /scripts/cardOperations.mjs
+17:36:24 [32mGET[39m /scripts/login.mjs
+17:36:24 [32mGET[39m /scripts/storageManager.mjs
+17:36:24 [32mGET[39m /assets/Que.png
+17:36:24 [32mGET[39m /favicon.ico
+17:36:30 [33mPUT[39m /users/undefined
+17:56:16 [32mGET[39m /index.html
+17:56:16 [32mGET[39m /index.html
+17:56:16 [32mGET[39m /styles/style.css
+17:56:16 [32mGET[39m /scripts/createCards.mjs
+17:56:16 [32mGET[39m /assets/Que.png
+17:56:16 [32mGET[39m /scripts/main.mjs
+17:56:16 [32mGET[39m /scripts/signUp.mjs
+17:56:16 [32mGET[39m /scripts/cardOperations.mjs
+17:56:17 [32mGET[39m /scripts/storageManager.mjs
+17:56:17 [32mGET[39m /scripts/login.mjs
+17:56:17 [32mGET[39m /favicon.ico
+17:56:21 [33mPOST[39m /users/login
+Attempting login for user: Test@mail.com
+Hashed password for Test@mail.com: undefined
+Password match for Test@mail.com: true
+User logged in and token generated for: Test@mail.com
+17:56:26 [33mPUT[39m /users/2
+17:57:15 [32mGET[39m /index.html
+17:57:15 [32mGET[39m /index.html
+17:57:15 [32mGET[39m /styles/style.css
+17:57:15 [32mGET[39m /assets/Que.png
+17:57:15 [32mGET[39m /scripts/main.mjs
+17:57:15 [32mGET[39m /scripts/signUp.mjs
+17:57:15 [32mGET[39m /scripts/createCards.mjs
+17:57:15 [32mGET[39m /scripts/cardOperations.mjs
+17:57:16 [32mGET[39m /scripts/login.mjs
+17:57:16 [32mGET[39m /scripts/storageManager.mjs
+17:57:18 [32mGET[39m /cards/all
+17:57:20 [32mGET[39m /index.html
+17:57:20 [32mGET[39m /index.html
+17:57:20 [32mGET[39m /styles/style.css
+17:57:20 [32mGET[39m /scripts/main.mjs
+17:57:20 [32mGET[39m /scripts/signUp.mjs
+17:57:20 [32mGET[39m /scripts/createCards.mjs
+17:57:20 [32mGET[39m /scripts/cardOperations.mjs
+17:57:20 [32mGET[39m /scripts/login.mjs
+17:57:20 [32mGET[39m /scripts/storageManager.mjs
+17:57:20 [32mGET[39m /assets/Que.png
+17:57:31 [32mGET[39m /index.html
+17:57:31 [32mGET[39m /index.html
+17:57:31 [32mGET[39m /styles/style.css
+17:57:31 [32mGET[39m /scripts/signUp.mjs
+17:57:31 [32mGET[39m /scripts/main.mjs
+17:57:31 [32mGET[39m /scripts/cardOperations.mjs
+17:57:31 [32mGET[39m /scripts/createCards.mjs
+17:57:31 [32mGET[39m /scripts/storageManager.mjs
+17:57:32 [32mGET[39m /scripts/login.mjs
+17:57:32 [32mGET[39m /assets/Que.png
+17:57:57 [32mGET[39m /cards/all
+17:58:15 [32mGET[39m /cards/1
+17:58:17 [32mGET[39m /index.html
+17:58:17 [32mGET[39m /index.html
+17:58:17 [32mGET[39m /styles/style.css
+17:58:17 [32mGET[39m /scripts/main.mjs
+17:58:17 [32mGET[39m /scripts/cardOperations.mjs
+17:58:17 [32mGET[39m /scripts/signUp.mjs
+17:58:17 [32mGET[39m /scripts/createCards.mjs
+17:58:17 [32mGET[39m /scripts/storageManager.mjs
+17:58:17 [32mGET[39m /scripts/login.mjs
+17:58:17 [32mGET[39m /assets/Que.png
+17:58:18 [32mGET[39m /cards/all
+17:58:19 [32mGET[39m /cards/2
+17:58:21 [32mGET[39m /index.html
+17:58:21 [32mGET[39m /index.html
+17:58:21 [32mGET[39m /styles/style.css
+17:58:21 [32mGET[39m /scripts/main.mjs
+17:58:21 [32mGET[39m /scripts/signUp.mjs
+17:58:21 [32mGET[39m /scripts/createCards.mjs
+17:58:21 [32mGET[39m /scripts/cardOperations.mjs
+17:58:22 [32mGET[39m /scripts/login.mjs
+17:58:22 [32mGET[39m /scripts/storageManager.mjs
+17:58:22 [32mGET[39m /assets/Que.png
+17:58:23 [32mGET[39m /cards/all
+17:58:24 [32mGET[39m /cards/1
+17:58:27 [32mGET[39m /index.html
+17:58:27 [32mGET[39m /index.html
+17:58:27 [32mGET[39m /styles/style.css
+17:58:27 [32mGET[39m /scripts/main.mjs
+17:58:27 [32mGET[39m /scripts/createCards.mjs
+17:58:27 [32mGET[39m /scripts/signUp.mjs
+17:58:27 [32mGET[39m /scripts/cardOperations.mjs
+17:58:27 [32mGET[39m /scripts/storageManager.mjs
+17:58:27 [32mGET[39m /scripts/login.mjs
+17:58:27 [32mGET[39m /assets/Que.png
+17:58:32 [32mGET[39m /index.html
+17:58:32 [32mGET[39m /index.html
+17:58:32 [32mGET[39m /styles/style.css
+17:58:32 [32mGET[39m /scripts/main.mjs
+17:58:32 [32mGET[39m /scripts/signUp.mjs
+17:58:32 [32mGET[39m /scripts/createCards.mjs
+17:58:32 [32mGET[39m /scripts/cardOperations.mjs
+17:58:32 [32mGET[39m /scripts/storageManager.mjs
+17:58:32 [32mGET[39m /scripts/login.mjs
+17:58:32 [32mGET[39m /assets/Que.png
+17:58:39 [32mGET[39m /index.html
+17:58:39 [32mGET[39m /index.html
+17:58:39 [32mGET[39m /styles/style.css
+17:58:39 [32mGET[39m /scripts/main.mjs
+17:58:39 [32mGET[39m /scripts/signUp.mjs
+17:58:39 [32mGET[39m /scripts/createCards.mjs
+17:58:39 [32mGET[39m /scripts/cardOperations.mjs
+17:58:39 [32mGET[39m /scripts/login.mjs
+17:58:39 [32mGET[39m /scripts/storageManager.mjs
+17:58:39 [32mGET[39m /assets/Que.png
+18:18:19 [32mGET[39m /index.html
+18:18:19 [32mGET[39m /scripts/createCards.mjs
+18:18:19 [32mGET[39m /styles/style.css
+18:18:19 [32mGET[39m /scripts/signUp.mjs
+18:18:19 [32mGET[39m /scripts/cardOperations.mjs
+18:18:19 [32mGET[39m /scripts/main.mjs
+18:18:20 [32mGET[39m /scripts/storageManager.mjs
+18:18:20 [32mGET[39m /scripts/login.mjs
+18:18:20 [32mGET[39m /assets/Que.png
+18:22:03 [32mGET[39m /index.html
+18:22:04 [32mGET[39m /styles/style.css
+18:22:04 [32mGET[39m /scripts/main.mjs
+18:22:04 [32mGET[39m /scripts/signUp.mjs
+18:22:04 [32mGET[39m /scripts/createCards.mjs
+18:22:04 [32mGET[39m /scripts/cardOperations.mjs
+18:22:04 [32mGET[39m /scripts/storageManager.mjs
+18:22:04 [32mGET[39m /scripts/login.mjs
+18:22:04 [32mGET[39m /assets/Que.png
+18:22:08 [33mPOST[39m /users/login
+Attempting login for user: Test@mail.com
+Hashed password for Test@mail.com: undefined
+Password match for Test@mail.com: true
+User logged in and token generated for: Test@mail.com
+18:22:14 [31mDELETE[39m /users
+18:22:17 [32mGET[39m /index.html
+18:22:17 [32mGET[39m /styles/style.css
+18:22:17 [32mGET[39m /scripts/main.mjs
+18:22:17 [32mGET[39m /scripts/signUp.mjs
+18:22:17 [32mGET[39m /scripts/createCards.mjs
+18:22:17 [32mGET[39m /scripts/cardOperations.mjs
+18:22:17 [32mGET[39m /scripts/login.mjs
+18:22:17 [32mGET[39m /scripts/storageManager.mjs
+18:22:17 [32mGET[39m /assets/Que.png
+18:22:32 [33mPOST[39m /users
+Created user: TestName  
+18:22:34 [32mGET[39m /index.html
+18:22:34 [32mGET[39m /styles/style.css
+18:22:34 [32mGET[39m /scripts/main.mjs
+18:22:34 [32mGET[39m /scripts/signUp.mjs
+18:22:34 [32mGET[39m /scripts/createCards.mjs
+18:22:34 [32mGET[39m /scripts/cardOperations.mjs
+18:22:34 [32mGET[39m /scripts/login.mjs
+18:22:34 [32mGET[39m /scripts/storageManager.mjs
+18:22:34 [32mGET[39m /assets/Que.png
+18:23:01 [33mPOST[39m /users/login
+Attempting login for user: Test@mail.com
+Hashed password for Test@mail.com: undefined
+Password match for Test@mail.com: true
+User logged in and token generated for: Test@mail.com
+19:09:26 [32mGET[39m /index.html
+19:09:26 [32mGET[39m /index.html
+19:09:26 [32mGET[39m /scripts/createCards.mjs
+19:09:27 [32mGET[39m /styles/style.css
+19:09:27 [32mGET[39m /scripts/main.mjs
+19:09:27 [32mGET[39m /scripts/signUp.mjs
+19:09:27 [32mGET[39m /scripts/cardOperations.mjs
+19:09:27 [32mGET[39m /scripts/login.mjs
+19:09:27 [32mGET[39m /scripts/storageManager.mjs
+19:09:27 [32mGET[39m /assets/Que.png
+19:09:27 [32mGET[39m /favicon.ico
+19:09:30 [33mPOST[39m /users/login
+Attempting login for user: Test@mail.com
+Hashed password for Test@mail.com: undefined
+Password match for Test@mail.com: true
+User logged in and token generated for: Test@mail.com
+19:10:49 [32mGET[39m /index.html
+19:10:49 [32mGET[39m /index.html
+19:10:50 [32mGET[39m /styles/style.css
+19:10:50 [32mGET[39m /scripts/main.mjs
+19:10:50 [32mGET[39m /scripts/signUp.mjs
+19:10:50 [32mGET[39m /scripts/createCards.mjs
+19:10:50 [32mGET[39m /scripts/cardOperations.mjs
+19:10:50 [32mGET[39m /assets/Que.png
+19:10:50 [32mGET[39m /scripts/storageManager.mjs
+19:10:50 [32mGET[39m /scripts/login.mjs
+19:10:54 [33mPOST[39m /users/login
+Attempting login for user: Test@mail.com
+Hashed password for Test@mail.com: undefined
+Password match for Test@mail.com: true
+User logged in and token generated for: Test@mail.com
+19:12:04 [33mPUT[39m /users
+19:12:24 [32mGET[39m /index.html
+19:12:24 [32mGET[39m /index.html
+19:12:24 [32mGET[39m /styles/style.css
+19:12:24 [32mGET[39m /scripts/main.mjs
+19:12:24 [32mGET[39m /scripts/signUp.mjs
+19:12:24 [32mGET[39m /scripts/createCards.mjs
+19:12:24 [32mGET[39m /scripts/cardOperations.mjs
+19:12:24 [32mGET[39m /assets/Que.png
+19:12:24 [32mGET[39m /favicon.ico
+19:12:24 [32mGET[39m /scripts/storageManager.mjs
+19:12:24 [32mGET[39m /scripts/login.mjs
+19:12:25 [32mGET[39m /favicon.ico
+19:12:38 [32mGET[39m /cards/all
+19:12:40 [32mGET[39m /index.html
+19:12:40 [32mGET[39m /index.html
+19:12:40 [32mGET[39m /styles/style.css
+19:12:41 [32mGET[39m /scripts/main.mjs
+19:12:41 [32mGET[39m /scripts/signUp.mjs
+19:12:41 [32mGET[39m /scripts/createCards.mjs
+19:12:41 [32mGET[39m /scripts/cardOperations.mjs
+19:12:41 [32mGET[39m /scripts/login.mjs
+19:12:41 [32mGET[39m /scripts/storageManager.mjs
+19:12:42 [32mGET[39m /assets/Que.png
+19:20:53 [32mGET[39m /index.html
+19:20:53 [32mGET[39m /index.html
+19:20:53 [32mGET[39m /styles/style.css
+19:20:53 [32mGET[39m /scripts/main.mjs
+19:20:53 [32mGET[39m /scripts/signUp.mjs
+19:20:53 [32mGET[39m /scripts/createCards.mjs
+19:20:53 [32mGET[39m /scripts/cardOperations.mjs
+19:20:53 [32mGET[39m /scripts/login.mjs
+19:20:53 [32mGET[39m /scripts/storageManager.mjs
+19:20:53 [32mGET[39m /assets/Que.png
+19:20:59 [33mPOST[39m /users/login
+19:21:03 [33mPOST[39m /users/login
+19:21:09 [33mPOST[39m /users/login
+Attempting login for user: Test@mail.com2
+Hashed password for Test@mail.com2: undefined
+Password match for Test@mail.com2: true
+User logged in and token generated for: Test@mail.com2
+19:21:10 [32mGET[39m /index.html
+19:21:11 [32mGET[39m /index.html
+19:21:11 [32mGET[39m /scripts/main.mjs
+19:21:11 [32mGET[39m /scripts/signUp.mjs
+19:21:11 [32mGET[39m /styles/style.css
+19:21:11 [32mGET[39m /scripts/createCards.mjs
+19:21:11 [32mGET[39m /scripts/cardOperations.mjs
+19:21:11 [32mGET[39m /favicon.ico
+19:21:11 [32mGET[39m /scripts/storageManager.mjs
+19:21:11 [32mGET[39m /scripts/login.mjs
+19:21:11 [32mGET[39m /assets/Que.png
+19:21:11 [32mGET[39m /favicon.ico
+19:21:14 [32mGET[39m /cards/all
+19:21:17 [32mGET[39m /index.html
+19:21:17 [32mGET[39m /styles/style.css
+19:21:17 [32mGET[39m /scripts/signUp.mjs
+19:21:17 [32mGET[39m /scripts/createCards.mjs
+19:21:17 [32mGET[39m /scripts/cardOperations.mjs
+19:21:17 [32mGET[39m /scripts/main.mjs
+19:21:18 [32mGET[39m /scripts/storageManager.mjs
+19:21:18 [32mGET[39m /scripts/login.mjs
+19:21:18 [32mGET[39m /assets/Que.png
+19:21:43 [32mGET[39m /index.html
+19:21:43 [32mGET[39m /index.html
+19:21:43 [32mGET[39m /styles/style.css
+19:21:43 [32mGET[39m /scripts/main.mjs
+19:21:43 [32mGET[39m /scripts/signUp.mjs
+19:21:43 [32mGET[39m /scripts/createCards.mjs
+19:21:43 [32mGET[39m /scripts/cardOperations.mjs
+19:21:44 [32mGET[39m /scripts/login.mjs
+19:21:44 [32mGET[39m /scripts/storageManager.mjs
+19:21:44 [32mGET[39m /assets/Que.png
+19:22:24 [32mGET[39m /index.html
+19:22:25 [32mGET[39m /index.html
+19:22:25 [32mGET[39m /styles/style.css
+19:22:25 [32mGET[39m /scripts/main.mjs
+19:22:25 [32mGET[39m /scripts/signUp.mjs
+19:22:25 [32mGET[39m /scripts/createCards.mjs
+19:22:25 [32mGET[39m /scripts/cardOperations.mjs
+19:22:25 [32mGET[39m /scripts/login.mjs
+19:22:25 [32mGET[39m /scripts/storageManager.mjs
+19:22:25 [32mGET[39m /assets/Que.png
+19:22:43 [32mGET[39m /index.html
+19:22:43 [32mGET[39m /styles/style.css
+19:22:43 [32mGET[39m /scripts/main.mjs
+19:22:43 [32mGET[39m /scripts/signUp.mjs
+19:22:43 [32mGET[39m /scripts/createCards.mjs
+19:22:43 [32mGET[39m /scripts/cardOperations.mjs
+19:22:44 [32mGET[39m /scripts/login.mjs
+19:22:44 [32mGET[39m /scripts/storageManager.mjs
+19:22:44 [32mGET[39m /assets/Que.png
+19:23:58 [32mGET[39m /index.html
+19:23:59 [32mGET[39m /index.html
+19:23:59 [32mGET[39m /styles/style.css
+19:23:59 [32mGET[39m /scripts/main.mjs
+19:23:59 [32mGET[39m /scripts/createCards.mjs
+19:23:59 [32mGET[39m /scripts/signUp.mjs
+19:23:59 [32mGET[39m /scripts/cardOperations.mjs
+19:23:59 [32mGET[39m /scripts/login.mjs
+19:23:59 [32mGET[39m /scripts/storageManager.mjs
+19:23:59 [32mGET[39m /assets/Que.png
+19:24:00 [32mGET[39m /cards/all
+19:24:01 [32mGET[39m /index.html
+19:24:01 [32mGET[39m /index.html
+19:24:01 [32mGET[39m /styles/style.css
+19:24:01 [32mGET[39m /scripts/main.mjs
+19:24:01 [32mGET[39m /scripts/signUp.mjs
+19:24:01 [32mGET[39m /scripts/createCards.mjs
+19:24:01 [32mGET[39m /scripts/cardOperations.mjs
+19:24:02 [32mGET[39m /scripts/login.mjs
+19:24:02 [32mGET[39m /scripts/storageManager.mjs
+19:24:02 [32mGET[39m /assets/Que.png
+19:27:30 [32mGET[39m /index.html
+19:27:30 [32mGET[39m /index.html
+19:27:30 [32mGET[39m /styles/style.css
+19:27:30 [32mGET[39m /scripts/main.mjs
+19:27:30 [32mGET[39m /scripts/createCards.mjs
+19:27:30 [32mGET[39m /scripts/signUp.mjs
+19:27:30 [32mGET[39m /scripts/cardOperations.mjs
+19:27:30 [32mGET[39m /scripts/storageManager.mjs
+19:27:30 [32mGET[39m /scripts/login.mjs
+19:27:31 [32mGET[39m /assets/Que.png
+19:27:39 [31mDELETE[39m /cards/2
+19:28:59 [31mDELETE[39m /cards/2
+19:29:17 [31mDELETE[39m /cards/2
+19:29:30 [31mDELETE[39m /cards/2
+19:30:10 [31mDELETE[39m /cards/2
+19:32:12 [32mGET[39m /index.html
+19:32:13 [32mGET[39m /index.html
+19:32:13 [32mGET[39m /styles/style.css
+19:32:13 [32mGET[39m /scripts/main.mjs
+19:32:13 [32mGET[39m /scripts/signUp.mjs
+19:32:13 [32mGET[39m /scripts/createCards.mjs
+19:32:13 [32mGET[39m /scripts/cardOperations.mjs
+19:32:13 [32mGET[39m /scripts/storageManager.mjs
+19:32:13 [32mGET[39m /scripts/login.mjs
+19:32:13 [32mGET[39m /assets/Que.png
+19:37:35 [33mPOST[39m /users
+Created user: TestName  
+10:35:02 [32mGET[39m /index.html
+10:35:02 [32mGET[39m /index.html
+10:35:02 [32mGET[39m /styles/style.css
+10:35:02 [32mGET[39m /scripts/main.mjs
+10:35:02 [32mGET[39m /scripts/createCards.mjs
+10:35:02 [32mGET[39m /scripts/cardOperations.mjs
+10:35:02 [32mGET[39m /scripts/signUp.mjs
+10:35:02 [32mGET[39m /assets/Que.png
+10:35:02 [32mGET[39m /scripts/storageManager.mjs
+10:35:02 [32mGET[39m /scripts/login.mjs
+10:35:02 [32mGET[39m /favicon.ico
